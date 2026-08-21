@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anil Mandal - Rice Image Upload</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f1f3f6;
+    color:#17212b;
+}
+.container{
+    max-width:600px;
+    margin:40px auto;
+    padding:20px;
+}
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 5px 25px rgba(0,0,0,.12);
+}
+h1{
+    color:#2874f0;
+}
+.upload-box{
+    margin-top:20px;
+    padding:25px;
+    border:2px dashed #2874f0;
+    border-radius:14px;
+    background:#f5f9ff;
+    text-align:center;
+}
+.upload-box label{
+    display:block;
+    font-weight:bold;
+    color:#2874f0;
+    margin-bottom:15px;
+}
+input[type="file"]{
+    width:100%;
+    padding:10px;
+}
+#ricePreview{
+    display:none;
+    width:100%;
+    max-width:320px;
+    height:230px;
+    object-fit:cover;
+    margin:20px auto 0;
+    border-radius:12px;
+    border:1px solid #ddd;
+}
+button{
+    width:100%;
+    margin-top:18px;
+    padding:13px;
+    border:0;
+    border-radius:8px;
+    background:#ff9f00;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+}
+#savedImage{
+    display:none;
+    width:100%;
+    max-width:320px;
+    height:230px;
+    object-fit:cover;
+    margin:20px auto 0;
+    border-radius:12px;
+}
+.note{
+    color:#68737d;
+    font-size:13px;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Anil Mandal</h1>
+<h2>🍚 Rice Product Image</h2>
+
+<p class="note">
+Phone Gallery/File Manager থেকে আপনার চালের ছবি নির্বাচন করুন।
+ছবি নির্বাচন করার পর সঙ্গে সঙ্গে Preview দেখা যাবে।
+</p>
+
+<div class="upload-box">
+
+<label for="riceImage">
+📸 Chawal ka Image Upload Karein
+</label>
+
+<input
+    type="file"
+    id="riceImage"
+    accept="image/*"
+    onchange="previewRiceImage(event)"
+>
+
+<img
+    id="ricePreview"
+    alt="Rice Image Preview"
+>
+
+<button onclick="saveRiceImage()">
+Save Rice Image
+</button>
+
+</div>
+
+<img id="savedImage" alt="Saved Rice Image">
+
+</div>
+</div>
+
+<script>
+function previewRiceImage(event){
+
+    const file = event.target.files[0];
+
+    if(!file){
+        return;
+    }
+
+    if(!file.type.startsWith("image/")){
+        alert("Sirf image file upload karein.");
+        event.target.value = "";
+        return;
+    }
+
+    if(file.size > 5 * 1024 * 1024){
+        alert("Image 5MB se kam honi chahiye.");
+        event.target.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        const preview = document.getElementById("ricePreview");
+
+        preview.src = e.target.result;
+        preview.style.display = "block";
+
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function saveRiceImage(){
+
+    const preview = document.getElementById("ricePreview");
+
+    if(!preview.src){
+        alert("Pehle rice ka image select karein.");
+        return;
+    }
+
+    localStorage.setItem("anilMandalRiceImage", preview.src);
+
+    document.getElementById("savedImage").src = preview.src;
+    document.getElementById("savedImage").style.display = "block";
+
+    alert("Rice image save ho gaya.");
+}
+
+window.addEventListener("load", function(){
+
+    const saved = localStorage.getItem("anilMandalRiceImage");
+
+    if(saved){
+
+        document.getElementById("ricePreview").src = saved;
+        document.getElementById("ricePreview").style.display = "block";
+
+        document.getElementById("savedImage").src = saved;
+        document.getElementById("savedImage").style.display = "block";
+    }
+
+});
+</script>
+
+</body>
+</html>
