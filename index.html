@@ -110,7 +110,21 @@ function adminList(){document.getElementById("adminList").innerHTML=data.product
 function editProduct(id=null){editId=id;let p=id?data.products.find(x=>x.id===id):{name:"",price:"",weight:"1 kg",category:"other",image:"",desc:""};pname.value=p.name;pprice.value=p.price;pweight.value=p.weight||"1 kg";pcat.value=p.category||"other";pdesc.value=p.desc||"";pfile.value="";prev.src=p.image||"";prev.style.display=p.image?"block":"none";document.getElementById("admin").classList.remove("open");document.getElementById("productAdmin").classList.add("open")}
 function closeProduct(){document.getElementById("productAdmin").classList.remove("open");openAdmin()}
 function preview(e){let f=e.target.files[0];if(!f)return;if(f.size>4*1024*1024){alert("৪MB-এর কম ছবি দিন।");return}let r=new FileReader();r.onload=()=>{prev.src=r.result;prev.style.display="block"};r.readAsDataURL(f)}
-function saveProduct(){let old=editId?data.products.find(x=>x.id===editId):null;let finish=img=>{let p={id:editId||Date.now(),name:pname.value.trim(),price:pprice.value.trim(),weight:pweight.value.trim(),category:pcat.value,image:img||"",desc:pdesc.value.trim()};if(!p.name){alert("পণ্যের নাম দিন");return}let i=data.products.findIndex(x=>x.id===p.id);if(i>=0)data.products[i]=p;else data.products.push(p);save();render();document.getElementById("productAdmin").classList.remove("open");openAdmin();toast("পণ্য সংরক্ষণ হয়েছে")};let f=pfile.files[0];if(f){let r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(f)}else finish(old?.image||"")}
+function saveProduct(){
+ let old=editId?data.products.find(x=>x.id===editId):null;
+ const finish=(img)=>{
+  let p={id:editId||Date.now(),name:pname.value.trim(),price:pprice.value.trim(),weight:pweight.value.trim(),category:pcat.value,image:img||"",desc:pdesc.value.trim()};
+  if(!p.name){alert("পণ্যের নাম দিন");return}
+  let i=data.products.findIndex(x=>x.id===p.id);
+  if(i>=0)data.products[i]=p;else data.products.push(p);
+  save();render();document.getElementById("productAdmin").classList.remove("open");openAdmin();toast("পণ্য ও ছবি সংরক্ষণ হয়েছে");
+ };
+ let f=document.getElementById("pfile").files[0];
+ if(f){
+  if(f.size>4*1024*1024){alert("৪MB-এর কম ছবি দিন।");return;}
+  let r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(f);
+ }else finish(old?.image||"");
+}
 function delProduct(id){if(confirm("এই পণ্যটি মুছে ফেলবেন?")){data.products=data.products.filter(p=>p.id!==id);save();render();toast("পণ্য মুছে ফেলা হয়েছে")}}
 function ownerLogin(){
  const entered=prompt("Owner Settings Password:");
