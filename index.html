@@ -2,130 +2,264 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anil Mandal | Premium Rice Store</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c1712">
+<title>Anil Mandal — Premium Rice Store</title>
 <style>
-:root{--ink:#182018;--muted:#687068;--cream:#fbf7ed;--card:#fff;--green:#315b3b;--gold:#c79642;--line:#e9e3d6;--shadow:0 14px 40px rgba(30,45,30,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink)}
-a{text-decoration:none;color:inherit}.top{background:var(--green);color:#fff;text-align:center;padding:9px 14px;font-size:13px}
-nav{position:sticky;top:0;z-index:20;background:rgba(251,247,237,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.navin{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px}.brand{font-family:"Playfair Display";font-size:25px}.brand span{color:var(--gold)}.links{display:flex;gap:24px;font-weight:600;font-size:14px}.admin{border:1px solid var(--green);padding:9px 14px;border-radius:999px;color:var(--green)}
-.hero{max-width:1180px;margin:28px auto;padding:70px 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
-.kicker{color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}.hero h1{font:700 clamp(46px,7vw,78px)/.98 "Playfair Display";margin:14px 0 20px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);font-size:18px;line-height:1.7;max-width:600px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{border:0;border-radius:12px;padding:14px 20px;font-weight:700;cursor:pointer}.primary{background:var(--green);color:#fff}.secondary{background:#fff;border:1px solid var(--line)}.hero-art{min-height:390px;border-radius:34px;background:linear-gradient(145deg,#e7d5a9,#f7ead0);position:relative;overflow:hidden;box-shadow:var(--shadow);display:grid;place-items:center}.rice-bowl{width:250px;height:125px;background:#fff;border-radius:0 0 130px 130px;border:8px solid #eee6d6;position:relative;box-shadow:0 22px 35px #927b5133}.rice-bowl:before{content:"";position:absolute;left:22px;right:22px;top:-70px;height:90px;border-radius:50%;background:radial-gradient(circle at 30% 40%,#fff 0 5%,transparent 6%),radial-gradient(circle at 60% 30%,#fdfdfd 0 5%,transparent 6%),radial-gradient(circle at 45% 65%,#fff 0 5%,transparent 6%),#faf8ef}.leaf{position:absolute;width:180px;height:70px;background:#4d754d;border-radius:100% 0 100% 0;opacity:.8}.leaf.one{left:-40px;bottom:35px;transform:rotate(15deg)}.leaf.two{right:-45px;top:35px;transform:rotate(190deg)}
-section{max-width:1180px;margin:0 auto;padding:35px 20px 70px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.section-head h2{font:700 38px "Playfair Display";margin:0}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.product{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 24px #29351a08}.pic{height:235px;background:#f1eadc;display:grid;place-items:center;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.placeholder{font:700 22px "Playfair Display";color:#8b7a58}.body{padding:18px}.body h3{font:700 21px "Playfair Display";margin:0 0 7px}.price{color:var(--green);font-weight:800;font-size:18px}.desc{color:var(--muted);font-size:14px;line-height:1.55;min-height:44px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.buy{width:100%;margin-top:14px}.about{background:var(--green);color:#fff;border-radius:30px;padding:45px}.about p{color:#e4eee5;line-height:1.7;max-width:750px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px}.box h3{margin-top:0;font-family:"Playfair Display";font-size:25px}.footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:var(--muted);font-size:13px}
-.modal{display:none;position:fixed;inset:0;background:#10160dcc;z-index:50;padding:18px;overflow:auto}.modal.show{display:block}.panel{max-width:850px;margin:30px auto;background:#fff;border-radius:24px;padding:24px}.panelhead{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field input,.field textarea,.field select{padding:12px;border:1px solid #ddd;border-radius:10px;font:inherit}.field textarea{min-height:90px;resize:vertical}.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:15px}.adminlist{margin-top:22px;border-top:1px solid #eee;padding-top:16px}.adminitem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #eee}.danger{background:#fbe8e8;color:#a52c2c}.small{padding:8px 12px;border-radius:9px;border:0;cursor:pointer;font-weight:700}
-@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:35px}.grid{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}.hero-art{min-height:300px}}
-@media(max-width:540px){.grid{grid-template-columns:1fr}.hero h1{font-size:50px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+:root{
+ --bg:#07100c;--bg2:#0d1b14;--card:#10231a;--card2:#132a20;
+ --cream:#f7f1df;--muted:#b9c7be;--green:#1e6b43;--green2:#2f9a61;
+ --gold:#d9ad5b;--gold2:#f1d28d;--line:rgba(255,255,255,.1);
+ --shadow:0 25px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(circle at 15% 10%,rgba(46,151,94,.17),transparent 28%),
+ radial-gradient(circle at 90% 35%,rgba(217,173,91,.12),transparent 26%),
+ linear-gradient(180deg,var(--bg),#09140f 55%,#07100c);
+ color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,calc(100% - 32px));margin:auto}
+.topbar{height:34px;background:#050b08;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#d9e3dd;font-size:12px;letter-spacing:1.8px;text-transform:uppercase}
+nav{position:sticky;top:0;z-index:30;background:rgba(7,16,12,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{display:flex;align-items:center;gap:11px}
+.logoMark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--gold2),var(--gold));display:grid;place-items:center;color:#132118;font-weight:950;box-shadow:0 10px 30px rgba(217,173,91,.22);transform:rotate(-5deg)}
+.logoText{font-family:Georgia,serif;font-weight:800;font-size:24px;letter-spacing:-.6px}
+.logoText b{color:var(--gold)}
+.navlinks{display:flex;gap:22px;color:#c6d0ca;font-size:14px}
+.navlinks a:hover{color:white}
+.lang{background:#10231a;color:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;outline:none}
+.hero{min-height:calc(100vh - 110px);display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:55px;padding:65px 0 75px;position:relative}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(217,173,91,.28);background:rgba(217,173,91,.08);color:var(--gold2);padding:9px 13px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,86px);line-height:.95;letter-spacing:-4px;margin:22px 0}
+h1 span{color:var(--gold)}
+.hero p{font-size:18px;line-height:1.75;color:var(--muted);max-width:650px}
+.ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{border:0;border-radius:14px;padding:14px 20px;font-weight:850;transition:.25s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:linear-gradient(135deg,#2c8e58,#165b38);color:white;box-shadow:0 14px 35px rgba(24,113,69,.25)}
+.secondary{background:rgba(255,255,255,.06);color:white;border:1px solid var(--line)}
+.hero3d{height:480px;position:relative;perspective:1000px}
+.riceScene{position:absolute;inset:15px;border-radius:38px;background:
+ radial-gradient(circle at 50% 35%,rgba(255,255,255,.18),transparent 15%),
+ linear-gradient(145deg,#173d2b,#0b1e15 62%,#0a1711);
+ border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow);overflow:hidden;transform:rotateY(-7deg) rotateX(4deg);transform-style:preserve-3d}
+.riceScene:before,.riceScene:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}
+.riceScene:before{width:270px;height:270px;left:-90px;bottom:-90px;background:rgba(47,154,97,.18)}
+.riceScene:after{width:250px;height:250px;right:-80px;top:-80px;background:rgba(217,173,91,.15)}
+.bowl3d{position:absolute;width:260px;height:120px;left:50%;top:54%;transform:translate(-50%,-50%) rotateX(55deg);border-radius:50%;background:linear-gradient(180deg,#f9f3e3,#d8cfbb);box-shadow:0 40px 45px rgba(0,0,0,.4);border:7px solid #eee4cc}
+.bowl3d:before{content:"";position:absolute;width:230px;height:95px;left:8px;top:-34px;border-radius:50%;background:radial-gradient(ellipse at 35% 35%,#fffdf4,#eee7d6 70%);box-shadow:inset 0 -10px 20px rgba(0,0,0,.08)}
+.grain{position:absolute;width:17px;height:7px;border-radius:100%;background:#fffaf0;box-shadow:0 2px 4px #b6ad98;animation:float 4s ease-in-out infinite}
+.g1{left:38%;top:38%;transform:rotate(20deg)}.g2{left:53%;top:32%;transform:rotate(-25deg);animation-delay:.7s}.g3{left:62%;top:43%;transform:rotate(30deg);animation-delay:1.2s}.g4{left:45%;top:46%;transform:rotate(-10deg);animation-delay:1.7s}.g5{left:57%;top:50%;transform:rotate(12deg);animation-delay:2.2s}
+.badge3d{position:absolute;right:24px;top:24px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.13);padding:13px 15px;border-radius:16px;transform:translateZ(40px);font-weight:800}
+@keyframes float{50%{translate:0 -8px}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.stat{padding:17px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}
+.stat b{display:block;font-size:22px;color:white}.stat span{font-size:12px;color:var(--muted)}
+.section{padding:80px 0}
+.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
+.kicker{color:var(--gold);font-weight:850;letter-spacing:2px;font-size:12px;text-transform:uppercase}
+h2{font:800 clamp(32px,5vw,48px)/1 Georgia;margin:8px 0}
+.sectionHead p{color:var(--muted)}
+.tools{display:grid;grid-template-columns:1fr 210px;gap:10px;margin-bottom:22px}
+.input,.select,.textarea{width:100%;background:#0d1b14;color:white;border:1px solid var(--line);border-radius:14px;padding:14px 15px;outline:none}
+.input:focus,.select:focus,.textarea:focus{border-color:rgba(217,173,91,.65);box-shadow:0 0 0 4px rgba(217,173,91,.07)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,#11251b,#0d1c15);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,.18);transition:.3s;transform-style:preserve-3d}
+.card:hover{transform:translateY(-8px) rotateX(1deg);box-shadow:0 28px 65px rgba(0,0,0,.3)}
+.productImg{height:245px;background:linear-gradient(145deg,#d9bd7d,#f5e6bc);position:relative;overflow:hidden;display:grid;place-items:center}
+.productImg:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.23),transparent);transform:translateX(-100%);animation:shine 5s infinite}
+@keyframes shine{45%,100%{transform:translateX(100%)}}
+.productImg img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.placeholder{font-size:56px;filter:drop-shadow(0 12px 12px rgba(0,0,0,.15))}
+.cardBody{padding:19px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.card h3{font:800 22px Georgia;margin:0 0 8px}
+.price{color:var(--gold2);font-weight:900;white-space:nowrap}
+.desc{color:#b8c5bd;line-height:1.6;min-height:50px}
+.tag{display:inline-block;color:#cfe2d5;background:rgba(47,154,97,.12);border:1px solid rgba(47,154,97,.25);padding:6px 9px;border-radius:999px;font-size:11px;margin-bottom:14px}
+.full{width:100%;margin-top:15px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.aboutCard{padding:32px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#10261b,#0a1711);box-shadow:var(--shadow)}
+.aboutCard p{color:var(--muted);line-height:1.8}
+.contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.contactCard{padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.035)}
+.contactCard strong{display:block;margin-bottom:7px}.contactCard span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:38px 0;color:#84928a;font-size:13px}
+.adminDock{margin-top:28px;padding:18px;border:1px solid rgba(217,173,91,.18);border-radius:18px;background:rgba(217,173,91,.04)}
+.adminDock.hiddenDock{display:none}
+.adminPanel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);z-index:100;padding:15px;overflow:auto}
+.adminPanel.open{display:block}
+.panel{width:min(900px,100%);margin:20px auto;background:#0e1e16;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow)}
+.panelHead{display:flex;justify-content:space-between;align-items:center;gap:15px}.close{width:40px;height:40px;border-radius:50%;background:#172920;color:white;border:1px solid var(--line)}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#aab9b0}.textarea{min-height:100px;resize:vertical}.preview{max-width:170px;max-height:130px;border-radius:14px;margin-top:8px;object-fit:cover;display:none}.adminList{border-top:1px solid var(--line);margin-top:20px;padding-top:18px}.adminItem{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.adminItem small{color:var(--muted)}
+.toast{position:fixed;right:16px;bottom:16px;background:#f7f1df;color:#0b1710;padding:13px 16px;border-radius:13px;box-shadow:var(--shadow);z-index:200;display:none;font-weight:800}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:40px}.hero3d{height:390px}.grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.contactGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.container{width:min(100% - 22px,1160px)}.navin{height:68px}.logoText{font-size:20px}.logoMark{width:36px;height:36px}.lang{padding:8px}.hero h1{letter-spacing:-2.5px}.hero3d{height:330px}.stats{grid-template-columns:1fr}.tools,.grid,.contactGrid{grid-template-columns:1fr}.section{padding:55px 0}.sectionHead{display:block}.formGrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
 </style>
 </head>
 <body>
-<div class="top">Fresh • Quality • Trusted Rice Selection</div>
-<nav><div class="navin">
-  <a class="brand" href="#">Anil <span>Mandal</span></a>
-  <div class="links"><a href="#home">Home</a><a href="#products">Rice</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-  <button class="admin" onclick="openAdmin()">⚙ Customize</button>
+<div class="topbar">Fresh • Quality • Trusted Rice Selection</div>
+<nav><div class="container navin">
+<a class="logo" href="#home" aria-label="Anil Mandal"><span class="logoMark">AM</span><span class="logoText">Anil <b>Mandal</b></span></a>
+<div class="navlinks"><a href="#home" data-t="home">Home</a><a href="#products" data-t="rice">Rice</a><a href="#about" data-t="about">About</a><a href="#contact" data-t="contact">Contact</a></div>
+<div style="display:flex;gap:8px;align-items:center"><select class="lang" id="langSelect" onchange="changeLanguage()"><option value="en">English</option><option value="hi">हिन्दी</option><option value="bn">বাংলা</option><option value="as">অসমীয়া</option><option value="gu">ગુજરાતી</option><option value="mr">मराठी</option><option value="ta">தமிழ்</option><option value="te">తెలుగు</option><option value="kn">ಕನ್ನಡ</option><option value="ml">മലയാളം</option><option value="pa">ਪੰਜਾਬੀ</option><option value="ur">اردو</option><option value="ne">नेपाली</option><option value="or">ଓଡ଼ିଆ</option><option value="custom">Other</option></select></div>
 </div></nav>
 
-<main id="home">
-<section class="hero">
-  <div><div class="kicker">Premium Rice Store</div>
-    <h1>Good rice makes <span>good meals.</span></h1>
-    <p>Choose your preferred rice variety, check the full details and place an order directly. Everything on this page is ready to customize from the protected admin area.</p>
-    <div class="cta"><a class="btn primary" href="#products">Shop Rice</a><a class="btn secondary" href="#contact">Contact Us</a></div>
-  </div>
-  <div class="hero-art"><div class="leaf one"></div><div class="leaf two"></div><div class="rice-bowl"></div></div>
+<main>
+<section class="container hero" id="home">
+<div>
+<span class="eyebrow">✦ Premium Rice Store</span>
+<h1>Good rice makes <span>good meals.</span></h1>
+<p id="heroText">Choose your preferred rice variety, explore complete details and order directly. A premium storefront designed for Anil Mandal.</p>
+<div class="ctas"><a class="btn primary" href="#products">Shop Rice <span>→</span></a><a class="btn secondary" href="#contact">Contact Us</a></div>
+<div class="stats"><div class="stat"><b>100%</b><span>Quality focused</span></div><div class="stat"><b>Fresh</b><span>Rice selection</span></div><div class="stat"><b>Direct</b><span>WhatsApp ordering</span></div></div>
+</div>
+<div class="hero3d"><div class="riceScene"><div class="badge3d">PREMIUM • FRESH</div><div class="bowl3d"></div><i class="grain g1"></i><i class="grain g2"></i><i class="grain g3"></i><i class="grain g4"></i><i class="grain g5"></i></div></div>
 </section>
 
-<section id="products">
- <div class="section-head"><div><div class="kicker">Our Selection</div><h2>Featured Rice</h2></div><p>Freshly listed products</p></div>
- <div class="grid" id="productGrid"></div>
+<section class="container section" id="products">
+<div class="sectionHead"><div><div class="kicker">Our Selection</div><h2 data-t="featured">Featured Rice</h2></div><p>Search • Filter • Order</p></div>
+<div class="tools"><input class="input" id="searchBox" oninput="filterProducts()" placeholder="🔎 Search rice, product name..."><select class="select" id="categoryFilter" onchange="filterProducts()"><option value="all">All Categories</option><option value="basmati">Basmati</option><option value="fine">Fine Rice</option><option value="fragrant">Fragrant</option><option value="premium">Premium</option><option value="other">Other</option></select></div>
+<div class="grid" id="productGrid"></div>
 </section>
 
-<section id="about"><div class="about"><div class="kicker">About Anil Mandal</div><h2>Quality you can trust.</h2><p id="aboutText">We provide quality rice varieties for everyday cooking and special occasions. Product details, prices and contact information can be updated anytime from the Customize panel.</p></div></section>
+<section class="container section" id="about">
+<div class="about"><div><div class="kicker">The Anil Mandal Standard</div><h2>Simple. Premium. Trusted.</h2></div><div class="aboutCard"><p id="aboutText">Quality rice varieties for everyday cooking and special occasions. Product details and prices can be managed from the owner-only customization area.</p></div></div>
+</section>
 
-<section id="contact">
- <div class="section-head"><div><div class="kicker">Get In Touch</div><h2>Order & Contact</h2></div></div>
- <div class="contact">
-   <div class="box"><h3>Shop Details</h3><p><b>Phone:</b> <span id="phone">Add your number</span></p><p><b>WhatsApp:</b> <span id="whatsapp">Add WhatsApp number</span></p><p><b>Address:</b> <span id="address">Add shop address</span></p></div>
-   <div class="box"><h3>Quick Order</h3><p>Click “Buy Now” on any rice product. The order message will open in WhatsApp when you add your WhatsApp number in Customize.</p><a class="btn primary" id="contactBtn" href="#products">View Products</a></div>
- </div>
+<section class="container section" id="contact">
+<div class="sectionHead"><div><div class="kicker">Get In Touch</div><h2>Order directly.</h2></div></div>
+<div class="contactGrid"><div class="contactCard"><strong>📞 Phone</strong><span id="phone">Add phone</span></div><div class="contactCard"><strong>💬 WhatsApp</strong><span id="whatsapp">Add WhatsApp</span></div><div class="contactCard"><strong>📍 Shop</strong><span id="address">Add address</span></div></div>
 </section>
 </main>
-<footer class="footer">© <span id="year"></span> Anil Mandal • Rice Store</footer>
 
-<div class="modal" id="adminModal"><div class="panel" id="adminPanel"></div></div>
+<footer><div class="container">
+<div style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap"><span>© <span id="year"></span> Anil Mandal Rice Store</span><span>Fresh • Quality • Trusted</span></div>
+<div class="adminDock" id="adminDock"><b>Store Owner</b><div style="color:#9eaca4;margin:6px 0 12px">Private website controls</div><button class="btn secondary" onclick="openAdmin()">⚙ Customize Website</button> <button class="btn secondary" onclick="hideAdminDock()">Hide Customize</button></div>
+</div></footer>
+
+<div class="adminPanel" id="adminPanel"><div class="panel">
+<div class="panelHead"><div><div class="kicker">Protected Owner Area</div><h2 style="margin-top:7px">Customize Website</h2></div><button class="close" onclick="closeAdmin()">×</button></div>
+<div class="formGrid">
+<div class="field"><label>Shop Name</label><input class="input" id="sName" value="Anil Mandal"></div>
+<div class="field"><label>Phone</label><input class="input" id="sPhone" placeholder="Your phone"></div>
+<div class="field"><label>WhatsApp (country code)</label><input class="input" id="sWa" placeholder="91XXXXXXXXXX"></div>
+<div class="field"><label>Shop Address</label><input class="input" id="sAddress" placeholder="Your shop address"></div>
+<div class="field full"><label>About</label><textarea class="textarea" id="sAbout"></textarea></div>
+</div>
+<div style="margin-top:15px"><button class="btn primary" onclick="saveSettings()">Save Website Settings</button></div>
+<div class="adminList"><h3>Products</h3><button class="btn primary" onclick="editProduct()">＋ Add New Product</button><div id="adminList"></div></div>
+</div></div>
+
+<div class="adminPanel" id="productPanel"><div class="panel">
+<div class="panelHead"><div><div class="kicker">Product Editor</div><h2 id="productTitle">Add Product</h2></div><button class="close" onclick="closeProduct()">×</button></div>
+<div class="formGrid">
+<div class="field"><label>Product Name</label><input class="input" id="pName"></div>
+<div class="field"><label>Price</label><input class="input" id="pPrice"></div>
+<div class="field"><label>Weight</label><input class="input" id="pWeight" value="1 kg"></div>
+<div class="field"><label>Category</label><select class="select" id="pCategory"><option value="basmati">Basmati</option><option value="fine">Fine Rice</option><option value="fragrant">Fragrant</option><option value="premium">Premium</option><option value="other">Other</option></select></div>
+<div class="field full"><label>📸 Upload Product Image</label><input class="input" id="pFile" type="file" accept="image/*" onchange="previewImage(event)"><img id="pPreview" class="preview"></div>
+<div class="field full"><label>Full Details / Description</label><textarea class="textarea" id="pDesc"></textarea></div>
+</div>
+<div class="ctas"><button class="btn secondary" onclick="closeProduct()">Cancel</button><button class="btn primary" onclick="saveProduct()">Save Product</button></div>
+</div></div>
+<div class="toast" id="toast"></div>
 
 <script>
-const DEFAULT = {
-  phone:"", whatsapp:"", address:"",
-  about:"We provide quality rice varieties for everyday cooking and special occasions. Product details, prices and contact information can be updated anytime from the Customize panel.",
-  products:[
-    {id:1,name:"Premium Basmati Rice",price:"₹120 / kg",weight:"1 kg",desc:"Long-grain aromatic rice, ideal for biryani and special meals.",image:""},
-    {id:2,name:"Everyday Fine Rice",price:"₹65 / kg",weight:"1 kg",desc:"Soft, tasty everyday rice for family meals.",image:""},
-    {id:3,name:"Gobindobhog Rice",price:"₹95 / kg",weight:"1 kg",desc:"Short-grain fragrant rice, perfect for Bengali dishes.",image:""}
-  ]
+const DEFAULT_PRODUCTS=[
+{id:1,name:"Premium Basmati Rice",price:"₹120 / kg",weight:"1 kg",category:"premium",image:"",desc:"Long-grain aromatic rice, ideal for biryani and special meals."},
+{id:2,name:"Everyday Fine Rice",price:"₹65 / kg",weight:"1 kg",category:"fine",image:"",desc:"Soft, tasty everyday rice for family meals."},
+{id:3,name:"Gobindobhog Rice",price:"₹95 / kg",weight:"1 kg",category:"fragrant",image:"",desc:"Short-grain fragrant rice, perfect for Bengali dishes."}
+];
+let data=JSON.parse(localStorage.getItem("anilMandalStore")||"null")||{shop:"Anil Mandal",phone:"",whatsapp:"",address:"",about:"Quality rice varieties for everyday cooking and special occasions.",products:DEFAULT_PRODUCTS};
+let editingId=null;
+const LANG={
+en:{home:"Home",rice:"Rice",about:"About",contact:"Contact",featured:"Featured Rice",search:"🔎 Search rice, product name...",all:"All Categories",buy:"BUY NOW"},
+hi:{home:"होम",rice:"चावल",about:"हमारे बारे में",contact:"संपर्क",featured:"चावल की किस्में",search:"🔎 चावल या उत्पाद खोजें...",all:"सभी श्रेणियाँ",buy:"अभी खरीदें"},
+bn:{home:"হোম",rice:"চাল",about:"আমাদের সম্পর্কে",contact:"যোগাযোগ",featured:"চালের সংগ্রহ",search:"🔎 চাল বা পণ্যের নাম খুঁজুন...",all:"সব বিভাগ",buy:"এখনই কিনুন"},
+as:{home:"হোম",rice:"চাউল",about:"আমাৰ বিষয়ে",contact:"যোগাযোগ",featured:"চাউলৰ সংগ্ৰহ",search:"🔎 চাউল বা সামগ্ৰী বিচাৰক...",all:"সকলো শ্ৰেণী",buy:"এতিয়াই কিনক"},
+gu:{home:"હોમ",rice:"ચોખા",about:"અમારા વિશે",contact:"સંપર્ક",featured:"ચોખાની પસંદગી",search:"🔎 ચોખા અથવા ઉત્પાદન શોધો...",all:"બધી કેટેગરી",buy:"હમણાં ખરીદો"},
+mr:{home:"मुख्यपृष्ठ",rice:"तांदूळ",about:"आमच्याबद्दल",contact:"संपर्क",featured:"तांदळाची निवड",search:"🔎 तांदूळ किंवा उत्पादन शोधा...",all:"सर्व श्रेणी",buy:"आता खरेदी करा"},
+ta:{home:"முகப்பு",rice:"அரிசி",about:"எங்களைப் பற்றி",contact:"தொடர்பு",featured:"அரிசி வகைகள்",search:"🔎 அரிசி அல்லது தயாரிப்பைத் தேடுங்கள்...",all:"அனைத்து வகைகள்",buy:"இப்போது வாங்கவும்"},
+te:{home:"హోమ్",rice:"బియ్యం",about:"మా గురించి",contact:"సంప్రదించండి",featured:"బియ్యం ఎంపిక",search:"🔎 బియ్యం లేదా ఉత్పత్తి వెతకండి...",all:"అన్ని వర్గాలు",buy:"ఇప్పుడే కొనండి"},
+kn:{home:"ಮುಖಪುಟ",rice:"ಅಕ್ಕಿ",about:"ನಮ್ಮ ಬಗ್ಗೆ",contact:"ಸಂಪರ್ಕ",featured:"ಅಕ್ಕಿ ಆಯ್ಕೆ",search:"🔎 ಅಕ್ಕಿ ಅಥವಾ ಉತ್ಪನ್ನ ಹುಡುಕಿ...",all:"ಎಲ್ಲಾ ವರ್ಗಗಳು",buy:"ಈಗ ಖರೀದಿಸಿ"},
+ml:{home:"ഹോം",rice:"അരി",about:"ഞങ്ങളെക്കുറിച്ച്",contact:"ബന്ധപ്പെടുക",featured:"അരി ശേഖരം",search:"🔎 അരി അല്ലെങ്കിൽ ഉൽപ്പന്നം തിരയുക...",all:"എല്ലാ വിഭാഗങ്ങളും",buy:"ഇപ്പോൾ വാങ്ങുക"},
+pa:{home:"ਹੋਮ",rice:"ਚੌਲ",about:"ਸਾਡੇ ਬਾਰੇ",contact:"ਸੰਪਰਕ",featured:"ਚੌਲਾਂ ਦੀ ਚੋਣ",search:"🔎 ਚੌਲ ਜਾਂ ਉਤਪਾਦ ਖੋਜੋ...",all:"ਸਾਰੀਆਂ ਸ਼੍ਰੇਣੀਆਂ",buy:"ਹੁਣੇ ਖਰੀਦੋ"},
+ur:{home:"ہوم",rice:"چاول",about:"ہمارے بارے میں",contact:"رابطہ",featured:"چاول کا انتخاب",search:"🔎 چاول یا پروڈکٹ تلاش کریں...",all:"تمام زمرے",buy:"ابھی خریدیں"},
+ne:{home:"गृह",rice:"चामल",about:"हाम्रो बारेमा",contact:"सम्पर्क",featured:"चामल छनोट",search:"🔎 चामल वा उत्पादन खोज्नुहोस्...",all:"सबै श्रेणी",buy:"अहिले किन्नुहोस्"},
+or:{home:"ହୋମ",rice:"ଚାଉଳ",about:"ଆମ ବିଷୟରେ",contact:"ଯୋଗାଯୋଗ",featured:"ଚାଉଳ ଚୟନ",search:"🔎 ଚାଉଳ କିମ୍ବା ଉତ୍ପାଦ ଖୋଜନ୍ତୁ...",all:"ସମସ୍ତ ବର୍ଗ",buy:"ଏବେ କିଣନ୍ତୁ"}
 };
-let data=JSON.parse(localStorage.getItem("anilMandalStore")||"null")||DEFAULT;
-function save(){localStorage.setItem("anilMandalStore",JSON.stringify(data)); render();}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+function persist(){localStorage.setItem("anilMandalStore",JSON.stringify(data));}
+function toast(t){const x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",1800);}
 function render(){
- document.getElementById("productGrid").innerHTML=data.products.map(p=>`
- <article class="product"><div class="pic">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:`<div class="placeholder">🍚 ${esc(p.name)}</div>`}</div>
- <div class="body"><div class="row"><h3>${esc(p.name)}</h3><span class="price">${esc(p.price)}</span></div><p class="desc">${esc(p.desc)}</p><small>${esc(p.weight||"")}</small><button class="btn primary buy" onclick="buy(${p.id})">BUY NOW</button></div></article>`).join("");
  document.getElementById("aboutText").textContent=data.about;
- document.getElementById("phone").textContent=data.phone||"Add your number";
- document.getElementById("whatsapp").textContent=data.whatsapp||"Add WhatsApp number";
- document.getElementById("address").textContent=data.address||"Add shop address";
+ document.getElementById("phone").textContent=data.phone||"Add phone";
+ document.getElementById("whatsapp").textContent=data.whatsapp||"Add WhatsApp";
+ document.getElementById("address").textContent=data.address||"Add address";
  document.getElementById("year").textContent=new Date().getFullYear();
+ renderProducts(data.products);renderAdminList();
+}
+function renderProducts(list){
+ const L=LANG[document.getElementById("langSelect").value]||LANG.en;
+ document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`<article class="card"><div class="productImg">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:`<div class="placeholder">🍚</div>`}</div><div class="cardBody"><span class="tag">${esc(p.category||"Other")}</span><div class="row"><h3>${esc(p.name)}</h3><span class="price">${esc(p.price)}</span></div><p class="desc">${esc(p.desc)}</p><small style="color:#8fa097">${esc(p.weight||"")}</small><button class="btn primary full" onclick="buy(${p.id})">${L.buy} →</button></div></article>`).join(""):`<p style="color:#aebbb3">No products found.</p>`;
+}
+function filterProducts(){
+ const q=(document.getElementById("searchBox").value||"").toLowerCase().trim(),c=document.getElementById("categoryFilter").value;
+ renderProducts(data.products.filter(p=>(!q||[p.name,p.desc,p.category,p.price,p.weight].join(" ").toLowerCase().includes(q))&&(c==="all"||p.category===c)));
 }
 function buy(id){
- const p=data.products.find(x=>x.id===id); if(!p)return;
- const msg=`Hello Anil Mandal, I want to order:%0A%0AProduct: ${encodeURIComponent(p.name)}%0APrice: ${encodeURIComponent(p.price)}%0AWeight: ${encodeURIComponent(p.weight||"")}`;
- const n=(data.whatsapp||"").replace(/\D/g,"");
- if(n) location.href=`https://wa.me/${n}?text=${msg}`; else alert("Please add your WhatsApp number from Customize.");
+ const p=data.products.find(x=>x.id===id);let n=(data.whatsapp||"").replace(/\D/g,"");
+ if(!n){alert("Please add WhatsApp number from Customize.");return}
+ location.href=`https://wa.me/${n}?text=${encodeURIComponent("Hello Anil Mandal, I want to order: "+p.name+" | "+p.price+" | "+p.weight)}`;
+}
+function changeLanguage(){
+ const code=document.getElementById("langSelect").value;
+ if(code==="custom"){alert("Custom languages can be added later.");return}
+ const L=LANG[code]||LANG.en;document.querySelectorAll("[data-t]").forEach(e=>e.textContent=L[e.dataset.t]||e.textContent);
+ document.getElementById("searchBox").placeholder=L.search;document.getElementById("categoryFilter").options[0].textContent=L.all;localStorage.setItem("anilLang",code);filterProducts();
 }
 function openAdmin(){
- const pass=prompt("Enter Admin Password:");
- if(pass!=="Anil@2026"){alert("Incorrect password.");return;}
- showDashboard();
+ document.getElementById("sName").value=data.shop;document.getElementById("sPhone").value=data.phone;document.getElementById("sWa").value=data.whatsapp;document.getElementById("sAddress").value=data.address;document.getElementById("sAbout").value=data.about;
+ document.getElementById("adminPanel").classList.add("open");
 }
-function showDashboard(){
- const m=document.getElementById("adminModal");m.classList.add("show");
- document.getElementById("adminPanel").innerHTML=`<div class="panelhead"><div><div class="kicker">Protected Admin Area</div><h2>Customize Website</h2></div><button class="close" onclick="closeAdmin()">×</button></div>
- <div class="formgrid">
- <label class="field"><span>Shop Name</span><input value="Anil Mandal" disabled></label>
- <label class="field"><span>Phone</span><input id="aPhone" value="${esc(data.phone)}"></label>
- <label class="field"><span>WhatsApp Number (with country code)</span><input id="aWhats" value="${esc(data.whatsapp)}" placeholder="91XXXXXXXXXX"></label>
- <label class="field"><span>Shop Address</span><input id="aAddress" value="${esc(data.address)}"></label>
- <label class="field full"><span>About Text</span><textarea id="aAbout">${esc(data.about)}</textarea></label>
- </div>
- <div class="actions"><button class="btn primary" onclick="saveSettings()">Save Website Settings</button></div>
- <div class="adminlist"><h3>Products</h3><button class="btn primary" onclick="editProduct(null)">+ Add New Product</button><div id="adminProducts">${adminProducts()}</div></div>`;
+function closeAdmin(){document.getElementById("adminPanel").classList.remove("open")}
+function saveSettings(){
+ data.shop=document.getElementById("sName").value.trim()||"Anil Mandal";data.phone=document.getElementById("sPhone").value.trim();data.whatsapp=document.getElementById("sWa").value.trim();data.address=document.getElementById("sAddress").value.trim();data.about=document.getElementById("sAbout").value.trim();
+ document.querySelector(".logoText").innerHTML=esc(data.shop).replace(" "," <b>")+"</b>";
+ persist();render();toast("Website settings saved.");
 }
-function adminProducts(){return data.products.map(p=>`<div class="adminitem"><div><b>${esc(p.name)}</b><br><small>${esc(p.price)} • ${esc(p.weight||"")}</small></div><div><button class="small" onclick="editProduct(${p.id})">Edit</button> <button class="small danger" onclick="deleteProduct(${p.id})">Delete</button></div></div>`).join("")}
-function saveSettings(){data.phone=document.getElementById("aPhone").value;data.whatsapp=document.getElementById("aWhats").value;data.address=document.getElementById("aAddress").value;data.about=document.getElementById("aAbout").value;save();showDashboard();alert("Website settings saved.");}
-function editProduct(id){
- const p=id?data.products.find(x=>x.id===id):{id:Date.now(),name:"",price:"",weight:"1 kg",desc:"",image:""};
- document.getElementById("adminPanel").innerHTML=`<div class="panelhead"><div><div class="kicker">Product Editor</div><h2>${id?"Edit":"Add"} Product</h2></div><button class="close" onclick="showDashboard()">×</button></div>
- <div class="formgrid">
- <label class="field"><span>Product Name</span><input id="pName" value="${esc(p.name)}"></label>
- <label class="field"><span>Price</span><input id="pPrice" value="${esc(p.price)}" placeholder="₹120 / kg"></label>
- <label class="field"><span>Weight</span><input id="pWeight" value="${esc(p.weight)}" placeholder="1 kg"></label>
- <label class="field"><span>Image URL</span><input id="pImage" value="${esc(p.image)}" placeholder="https://..."></label>
- <label class="field full"><span>Full Details / Description</span><textarea id="pDesc">${esc(p.desc)}</textarea></label>
- </div><div class="actions"><button class="btn secondary" onclick="showDashboard()">Cancel</button><button class="btn primary" onclick="saveProduct(${id||0})">Save Product</button></div>`;
+function renderAdminList(){
+ document.getElementById("adminList").innerHTML=data.products.map(p=>`<div class="adminItem"><div><b>${esc(p.name)}</b><br><small>${esc(p.price)} • ${esc(p.weight||"")}</small></div><div style="display:flex;gap:7px"><button class="btn secondary" onclick="editProduct(${p.id})">Edit</button><button class="btn secondary" onclick="deleteProduct(${p.id})">Delete</button></div></div>`).join("");
 }
-function saveProduct(id){
- const p={id:id||Date.now(),name:document.getElementById("pName").value.trim(),price:document.getElementById("pPrice").value.trim(),weight:document.getElementById("pWeight").value.trim(),image:document.getElementById("pImage").value.trim(),desc:document.getElementById("pDesc").value.trim()};
- if(!p.name){alert("Product name is required.");return}
- const i=data.products.findIndex(x=>x.id===p.id); if(i>=0)data.products[i]=p; else data.products.push(p);save();showDashboard();alert("Product saved.");
+function editProduct(id=null){
+ editingId=id;
+ const p=id?data.products.find(x=>x.id===id):{name:"",price:"",weight:"1 kg",category:"other",image:"",desc:""};
+ document.getElementById("productTitle").textContent=id?"Edit Product":"Add Product";document.getElementById("pName").value=p.name;document.getElementById("pPrice").value=p.price;document.getElementById("pWeight").value=p.weight||"1 kg";document.getElementById("pCategory").value=p.category||"other";document.getElementById("pDesc").value=p.desc||"";
+ document.getElementById("pFile").value="";document.getElementById("pPreview").src=p.image||"";document.getElementById("pPreview").style.display=p.image?"block":"none";
+ closeAdmin();document.getElementById("productPanel").classList.add("open");
 }
-function deleteProduct(id){if(confirm("Delete this product?")){data.products=data.products.filter(p=>p.id!==id);save();showDashboard();}}
-function closeAdmin(){document.getElementById("adminModal").classList.remove("show")}
+function closeProduct(){document.getElementById("productPanel").classList.remove("open");openAdmin();}
+function previewImage(e){const f=e.target.files[0];if(!f)return;if(f.size>4*1024*1024){alert("Please select an image under 4MB.");e.target.value="";return}const r=new FileReader();r.onload=()=>{pPreview.src=r.result;pPreview.style.display="block"};r.readAsDataURL(f)}
+function saveProduct(){
+ const old=editingId?data.products.find(x=>x.id===editingId):null;
+ const finish=image=>{const p={id:editingId||Date.now(),name:pName.value.trim(),price:pPrice.value.trim(),weight:pWeight.value.trim(),category:pCategory.value,image:image||"",desc:pDesc.value.trim()};if(!p.name){alert("Product name required.");return}const i=data.products.findIndex(x=>x.id===p.id);if(i>=0)data.products[i]=p;else data.products.push(p);persist();render();closeProduct();toast("Product saved successfully.");};
+ const f=pFile.files[0];if(f){const r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(f)}else finish(old?.image||"");
+}
+function deleteProduct(id){if(confirm("Delete this product?")){data.products=data.products.filter(x=>x.id!==id);persist();render();toast("Product deleted.")}}
+function hideAdminDock(){document.getElementById("adminDock").classList.add("hiddenDock");localStorage.setItem("adminHidden","1")}
+function showAdminDock(){document.getElementById("adminDock").classList.remove("hiddenDock");localStorage.removeItem("adminHidden")}
+let logoTaps=0,logoTimer;
+document.querySelector(".logo").addEventListener("click",e=>{e.preventDefault();logoTaps++;clearTimeout(logoTimer);logoTimer=setTimeout(()=>logoTaps=0,1200);if(logoTaps>=5){showAdminDock();logoTaps=0;toast("Owner controls restored.")}});
+document.addEventListener("keydown",e=>{if(e.altKey&&e.shiftKey&&e.key.toLowerCase()==="a")showAdminDock()});
 render();
+const saved=localStorage.getItem("anilLang");if(saved&&LANG[saved]){document.getElementById("langSelect").value=saved;changeLanguage()}
+if(localStorage.getItem("adminHidden")==="1")document.getElementById("adminDock").classList.add("hiddenDock");
 </script>
 </body>
 </html>
