@@ -586,6 +586,88 @@ header, .site-header, .topbar, .navbar {
   .am-about-pro{font-size:14px;line-height:1.65}
 }
 
+
+/* ===== V10 — EXACT COMPACT MARKED-AREA CONTENT ===== */
+.hero{
+  min-height:0!important;
+  height:auto!important;
+  padding:18px 22px 20px!important;
+}
+.am-premium-content{max-width:920px!important}
+.am-kicker{
+  font-size:8px!important;
+  padding:4px 9px!important;
+  letter-spacing:.9px!important;
+}
+.am-premium-content h1{
+  font-size:clamp(22px,4vw,38px)!important;
+  line-height:1.1!important;
+  margin:7px 0 8px!important;
+  color:#fff!important;
+}
+.am-tagline{
+  display:inline-block;
+  margin:0 0 8px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(255,226,138,.13);
+  border:1px solid rgba(255,226,138,.30);
+  color:#ffe28a;
+  font-size:14px;
+  font-weight:900;
+}
+.am-lead{
+  font-size:13px!important;
+  line-height:1.45!important;
+  margin:0 0 8px!important;
+}
+.am-notice{
+  padding:8px 11px!important;
+  margin:6px 0!important;
+  border-radius:11px!important;
+  gap:8px!important;
+}
+.am-notice-icon{font-size:16px!important}
+.am-notice b{font-size:12px!important}
+.am-notice p{font-size:10.5px!important;line-height:1.3!important;margin:2px 0 0!important}
+.am-store-note{
+  font-size:12px!important;
+  line-height:1.45!important;
+  margin:7px 0!important;
+}
+.am-store-note span{font-size:17px!important}
+.am-brand-line{
+  margin-top:8px!important;
+  padding-top:9px!important;
+  border-top:1px solid rgba(255,255,255,.20)!important;
+}
+.am-brand-line strong{
+  color:#ffe28a!important;
+  font-size:13px!important;
+  letter-spacing:.4px!important;
+}
+@media(max-width:700px){
+  .hero{padding:14px 15px 16px!important;border-radius:0 0 20px 20px!important}
+  .am-kicker{font-size:6.5px!important;padding:3px 7px!important}
+  .am-premium-content h1{
+    font-size:22px!important;
+    margin:6px 0!important;
+  }
+  .am-tagline{
+    font-size:11px!important;
+    padding:4px 8px!important;
+    margin-bottom:6px!important;
+  }
+  .am-lead{font-size:11.5px!important;margin-bottom:5px!important}
+  .am-notice{padding:7px 8px!important;margin:5px 0!important}
+  .am-notice-icon{font-size:14px!important}
+  .am-notice b{font-size:10.5px!important}
+  .am-notice p{font-size:9.5px!important}
+  .am-store-note{font-size:11px!important;margin:5px 0!important}
+  .am-brand-line{margin-top:6px!important;padding-top:7px!important}
+  .am-brand-line strong{font-size:11px!important}
+}
+
 </style>
 </head>
 <body class="light">
@@ -605,23 +687,38 @@ header, .site-header, .topbar, .navbar {
 </div></header>
 
 
+
 <section class="hero">
   <div class="am-premium-content">
     <div class="am-kicker">ANIL MANDAL PREMIUM RICE STORE</div>
-    <h1>আপনার প্রতিদিনের রান্নার জন্য <span>ভালো মানের চালের সেরা পছন্দ।</span></h1>
+
+    <h1>ANIL MANDAL PREMIUM RICE STORE</h1>
+
+    <div class="am-tagline">🍚 ভালো মানের চালের বিশ্বস্ত ঠিকানা।</div>
+
     <p class="am-lead">
-      আমাদের <strong>চালের গুদানে</strong> বিভিন্ন ধরনের ভালো মানের চাল পাওয়া যায়।
-      আপনার পছন্দ ও প্রয়োজন অনুযায়ী চাল <strong>দেখে, যাচাই করে ও পছন্দ করে</strong> কিনে নিতে পারবেন।
+      আমাদের স্টোরে বিভিন্ন ধরনের চাল পাওয়া যায়।
     </p>
+
     <div class="am-notice">
       <div class="am-notice-icon">📌</div>
       <div>
-        <b>বর্তমানে অনলাইন/WhatsApp অর্ডার পরিষেবা চালু নেই।</b>
-        <p>WhatsApp-এর মাধ্যমে <strong>চালের ধরন, মূল্য, স্টক ও অন্যান্য তথ্য</strong> জানতে পারবেন।</p>
+        <b>বর্তমানে WhatsApp-এর মাধ্যমে অর্ডার নেওয়া হয় না।</b>
+        <p>তবে WhatsApp-এ যোগাযোগ করে <strong>চালের ধরন, মূল্য ও স্টকের বিস্তারিত তথ্য</strong> জানতে পারবেন।</p>
       </div>
+    </div>
+
+    <div class="am-store-note">
+      <span>🛒</span>
+      <p>চাল কিনতে হলে <strong>সরাসরি আমাদের স্টোরে</strong> এসে চাল দেখে ও যাচাই করে কিনে নিয়ে যেতে হবে।</p>
+    </div>
+
+    <div class="am-brand-line">
+      <strong>ভালো চাল • ভালো রান্না • সঠিক পছন্দ 🍚</strong>
     </div>
   </div>
 </section>
+
 
 
 <div class="toolbar" id="products"><div class="sectionTitle"><span class="sectionIcon">🍚</span><div><h2>চালের পণ্য</h2><small id="count">সব পণ্য</small></div></div><span class="sectionHint">আপনার পছন্দের চাল বেছে নিন</span></div>
