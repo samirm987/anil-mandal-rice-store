@@ -1339,6 +1339,26 @@ footer{max-width:1400px!important;border-radius:24px 24px 0 0!important;backgrou
 @media(max-width:650px){.detailBox{padding:12px;border-radius:24px;max-height:94vh}.detailBox h2{font-size:23px}.detailPrice{font-size:21px}.detailDesc{font-size:14px}.detailImage{border-radius:18px}}
 
 
+
+
+/* ===== V17 RICH DESCRIPTION EDITOR ===== */
+.richToolbar{display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:linear-gradient(135deg,#f3f7ff,#fff);border:1px solid #dce6f2;border-bottom:0;border-radius:14px 14px 0 0}
+.richToolbar button{min-width:36px;height:34px;border:1px solid #d5e0ee;border-radius:9px;background:#fff;color:#1b3550;font-weight:900;cursor:pointer;box-shadow:0 3px 8px rgba(25,70,130,.08)}
+.richToolbar button:active{transform:translateY(1px)}
+.richEditor{min-height:180px;max-height:340px;overflow:auto;padding:14px 15px;border:1px solid #dce6f2;border-radius:0 0 14px 14px;background:#fff;color:#17212b;line-height:1.75;outline:none}
+.richEditor:empty:before{content:attr(data-placeholder);color:#9aa7b4;pointer-events:none}
+.richEditor:focus{border-color:#2874f0;box-shadow:0 0 0 3px rgba(40,116,240,.12)}
+.richEditor p,.richEditor div{margin:.15em 0}
+.detailDesc p,.detailDesc div{margin:.18em 0}
+.detailDesc ul,.detailDesc ol{padding-left:1.35em;margin:.35em 0}
+.detailDesc strong,.detailDesc b{font-weight:900;color:#173c63}
+.detailDesc u{text-decoration:underline}
+.dark .richToolbar{background:#132238;border-color:#2b4562}
+.dark .richToolbar button{background:#182b42;color:#fff;border-color:#35516f}
+.dark .richEditor{background:#0f1d2d;color:#e8f1fb;border-color:#2b4562}
+.dark .richEditor:empty:before{color:#8295aa}
+.dark .detailDesc strong,.dark .detailDesc b{color:#f3c75f}
+
 /* ===== V15 FINAL: TRUE 1:1 PRODUCT BOX + GUARANTEED CLICK DETAILS ===== */
 .products .card{cursor:pointer!important;position:relative!important;overflow:hidden!important}
 .products .card .pic{width:100%!important;height:auto!important;aspect-ratio:1 / 1!important;min-height:0!important;max-height:none!important;display:grid!important;place-items:center!important;overflow:hidden!important;position:relative!important;padding:0!important;box-sizing:border-box!important}
@@ -1358,7 +1378,7 @@ footer{max-width:1400px!important;border-radius:24px 24px 0 0!important;backgrou
 /* version marker */
 .am-v15-badge{position:fixed;right:8px;bottom:8px;z-index:9999;font:700 9px/1 Arial,sans-serif;color:rgba(255,255,255,.28);pointer-events:none}
 
-</style>
+.am-v17-badge{position:fixed;right:7px;bottom:7px;z-index:9999;font:10px Arial;color:#7891aa;opacity:.55;pointer-events:none}\n</style>
 <style>
 /* V16 CONTACT + PRICE POLISH */
 .mrp{color:#aab7c6!important;text-decoration:none!important;font-weight:800!important;white-space:nowrap!important;display:inline-block!important;margin-left:8px!important;}
@@ -1483,7 +1503,22 @@ footer{max-width:1400px!important;border-radius:24px 24px 0 0!important;backgrou
 </div>
 <img id="prev" class="preview" style="max-width:260px;max-height:190px;object-fit:contain;border-radius:12px;border:1px solid #e5eaf0">
 <small style="color:#68737d">ছবি নির্বাচন করলে Crop window খুলবে। ছবির অবস্থান, Zoom ও Ratio ঠিক করে তারপর Save করুন।</small>
-</div><div class="field full"><label>সম্পূর্ণ বিবরণ</label><textarea id="pdesc"></textarea></div></div><br><button class="save" onclick="saveProduct()">Save Product</button></div></div>
+</div><div class="field full">
+<label>সম্পূর্ণ বিবরণ <small style="font-weight:600;color:#7b8794">(Bold/Color/Line Break সহ Paste করুন)</small></label>
+<div class="richToolbar" role="toolbar" aria-label="Description formatting">
+  <button type="button" onclick="formatDesc('bold')" title="Bold"><b>B</b></button>
+  <button type="button" onclick="formatDesc('italic')" title="Italic"><i>I</i></button>
+  <button type="button" onclick="formatDesc('underline')" title="Underline"><u>U</u></button>
+  <button type="button" onclick="formatDesc('foreColor','#1769d2')" title="Blue">🔵</button>
+  <button type="button" onclick="formatDesc('foreColor','#d99a00')" title="Gold">🟡</button>
+  <button type="button" onclick="formatDesc('hiliteColor','#fff1a8')" title="Highlight">🖍️</button>
+  <button type="button" onclick="formatDesc('justifyLeft')" title="Left">≡</button>
+  <button type="button" onclick="formatDesc('removeFormat')" title="Clear formatting">Tx</button>
+</div>
+<div id="pdesc" class="richEditor" contenteditable="true" spellcheck="true"
+     data-placeholder="এখানে পণ্যের সম্পূর্ণ বিবরণ লিখুন বা Word/WhatsApp/অন্যান্য জায়গা থেকে সাজানো লেখা Paste করুন..."></div>
+<small style="color:#68737d">সাজানো লেখা Paste করলে Bold, line break ও basic color/highlight যতটা সম্ভব সংরক্ষণ করা হবে।</small>
+</div></div><br><button class="save" onclick="saveProduct()">Save Product</button></div></div>
 <div class="cropModal" id="cropModal">
   <div class="cropBox">
     <div class="cropHead"><div><b>✂️ ছবি Crop করুন</b><small style="display:block;color:#68737d;margin-top:3px">ছবিটি ধরে টেনে position ঠিক করুন</small></div><button class="close" onclick="closeCrop()">×</button></div>
@@ -1686,7 +1721,7 @@ function openProductDetail(id){
   document.getElementById("detailWeight").textContent=p.weight||"";
   const catObj=data.categories.find(c=>c.id===p.category);
   document.getElementById("detailCategory").textContent=catObj?.label||p.category||"";
-  document.getElementById("detailDesc").textContent=p.desc||"এই পণ্যের বিস্তারিত তথ্য জানতে দোকানে যোগাযোগ করুন।";
+  document.getElementById("detailDesc").innerHTML=sanitizeRichHtml(p.desc||"এই পণ্যের বিস্তারিত তথ্য জানতে দোকানে যোগাযোগ করুন।");
   document.getElementById("detailBadge").textContent=lang.quality||"QUALITY";
   const im=document.getElementById("detailImage");
   im.innerHTML=p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:`<div class="riceIcon">🍚</div>`;
@@ -1712,7 +1747,8 @@ function openPhone(){
 function openWhatsApp(){
   const n=normalizePhone(data.wa||data.phone);
   if(!n){toast('Customize থেকে WhatsApp নম্বর যোগ করুন');return;}
-  window.location.href='https://wa.me/'+n;
+  const msg='হ্যালো 👋 স্যার, আমি চালের সম্পূর্ণ বিস্তারিত তথ্য জানতে চাই। অনুগ্রহ করে চালের ধরন, মূল্য, স্টক ও অন্যান্য তথ্য জানাবেন। ধন্যবাদ।';
+  window.location.href='https://wa.me/'+n+'?text='+encodeURIComponent(msg);
 }
 function openAddress(){
   const a=String(data.address||'').trim();
@@ -1752,7 +1788,7 @@ function editProduct(id=null){
   const el=id=>document.getElementById(id);
   let p=id?data.products.find(x=>x.id===id):{name:"",price:"",weight:"1 kg",category:data.categories[0]?.id||"other",image:"",desc:""};
   el("pname").value=p.name||""; el("pprice").value=p.price||""; el("pweight").value=p.weight||"1 kg";
-  renderCategorySelect(p.category); el("pcat").value=p.category||data.categories[0]?.id||""; el("pdesc").value=p.desc||"";
+  renderCategorySelect(p.category); el("pcat").value=p.category||data.categories[0]?.id||""; setDescriptionEditor(p.desc||"");
   el("pfile").value=""; el("prev").src=p.image||""; el("prev").style.display=p.image?"block":"none"; el("prev").dataset.image=p.image||"";
   el("ptitle").textContent=id?"✏️ Edit Product":"➕ Add New Product";
   document.getElementById("admin").classList.remove("open");
@@ -1849,12 +1885,63 @@ function applyCrop(){
  toast("ছবি Crop করে প্রস্তুত হয়েছে");
 }
 
+function formatDesc(cmd,value=null){
+  const ed=document.getElementById("pdesc"); if(!ed)return;
+  ed.focus();
+  try{document.execCommand(cmd,false,value);}catch(e){}
+}
+function sanitizeRichHtml(raw){
+  if(!raw)return "";
+  // Backward compatibility: old products stored plain text.
+  if(!/[<][a-zA-Z][^>]*>/.test(String(raw))){
+    return esc(String(raw)).replace(/\r?\n/g,"<br>");
+  }
+  const doc=new DOMParser().parseFromString(String(raw),"text/html");
+  const allowed=new Set(["B","STRONG","I","EM","U","BR","P","DIV","SPAN","UL","OL","LI"]);
+  const cleanNode=(node)=>{
+    if(node.nodeType===Node.TEXT_NODE)return document.createTextNode(node.nodeValue||"");
+    if(node.nodeType!==Node.ELEMENT_NODE)return document.createDocumentFragment();
+    if(!allowed.has(node.tagName)){
+      const frag=document.createDocumentFragment();
+      [...node.childNodes].forEach(ch=>frag.appendChild(cleanNode(ch)));
+      return frag;
+    }
+    const el=document.createElement(node.tagName.toLowerCase());
+    if(node.tagName==="SPAN"){
+      const st=node.getAttribute("style")||"";
+      const keep=[];
+      st.split(";").forEach(part=>{
+        const [k,...vv]=part.split(":"); if(!k||!vv.length)return;
+        const key=k.trim().toLowerCase(), val=vv.join(":").trim();
+        if(["color","background-color","font-weight","font-style","text-decoration","text-align"].includes(key)){
+          if(/^[#(),.%\\w\\s-]+$/.test(val))keep.push(key+":"+val);
+        }
+      });
+      if(keep.length)el.setAttribute("style",keep.join(";"));
+    }
+    [...node.childNodes].forEach(ch=>el.appendChild(cleanNode(ch)));
+    return el;
+  };
+  const frag=document.createDocumentFragment();
+  [...doc.body.childNodes].forEach(ch=>frag.appendChild(cleanNode(ch)));
+  const wrap=document.createElement("div"); wrap.appendChild(frag);
+  return wrap.innerHTML;
+}
+function setDescriptionEditor(raw){
+  const ed=document.getElementById("pdesc"); if(!ed)return;
+  ed.innerHTML=sanitizeRichHtml(raw||"");
+}
+function getDescriptionEditorHtml(){
+  const ed=document.getElementById("pdesc"); if(!ed)return "";
+  return sanitizeRichHtml(ed.innerHTML.trim());
+}
+
 function saveProduct(){
  const el=id=>document.getElementById(id);
  const old=editId?data.products.find(x=>x.id===editId):null;
  const img=el("prev").dataset.image||"";
  const finish=(finalImg)=>{
-   const p={id:editId||Date.now(),name:el("pname").value.trim(),price:el("pprice").value.trim(),weight:el("pweight").value.trim()||"1 kg",category:el("pcat").value,image:finalImg||"",desc:el("pdesc").value.trim()};
+   const p={id:editId||Date.now(),name:el("pname").value.trim(),price:el("pprice").value.trim(),weight:el("pweight").value.trim()||"1 kg",category:el("pcat").value,image:finalImg||"",desc:getDescriptionEditorHtml()};
    if(!p.name){alert("পণ্যের নাম দিন");return;}
    const i=data.products.findIndex(x=>x.id===p.id);
    if(i>=0)data.products[i]=p; else data.products.push(p);
@@ -1875,5 +1962,5 @@ render();if(storeGet("anilTheme")==="dark"){document.body.classList.add("dark");
 const savedLang=storeGet("anilLangV2")||"bn";document.getElementById("lang").value=savedLang;setLanguage(savedLang);
 
 </script>
-<div class="am-v15-badge">V15</div>
+<div class="am-v17-badge">V17</div>
 </body></html>
