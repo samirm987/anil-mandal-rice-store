@@ -470,6 +470,53 @@ header, .header, .siteHeader{
   .am-brand-line span{font-size:12px}
 }
 
+
+/* ===== COMPACT STICKY TOP BAR ===== */
+header, .site-header, .topbar, .navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+}
+.am-premium-content{
+  max-width: 900px !important;
+}
+@media (min-width:701px){
+  .hero{min-height:460px!important;padding:42px 48px!important}
+  .am-premium-content h1{font-size:48px!important;max-width:760px!important}
+  .am-lead{max-width:760px!important}
+}
+@media (max-width:700px){
+  /* Keep the header compact: one top row + one search row */
+  header, .site-header, .topbar, .navbar{
+    padding:7px 10px !important;
+  }
+  header *,.site-header *,.topbar *,.navbar *{
+    max-height:52px;
+  }
+  .hero{
+    min-height:0!important;
+    padding:24px 16px 28px!important;
+  }
+  .am-kicker{
+    font-size:8px!important;
+    padding:6px 9px!important;
+    letter-spacing:.8px!important;
+  }
+  .am-premium-content h1{
+    font-size:28px!important;
+    margin:12px 0!important;
+  }
+  .am-lead{font-size:13px!important}
+  .am-notice{
+    padding:10px 12px!important;
+    margin:11px 0!important;
+    border-radius:12px!important;
+  }
+  .am-store-note{font-size:13px!important;margin:9px 0!important}
+  .am-steps{margin:12px 0!important}
+  .am-footer-copy{font-size:12px!important}
+}
+
 </style>
 </head>
 <body class="light">
