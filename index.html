@@ -717,6 +717,559 @@ header, .site-header, .topbar, .navbar {
   .am-premium-content h1::before{margin-right:5px}
 }
 
+
+/* =========================================================
+   V12 — ANIL MANDAL ULTRA PREMIUM 3D BRAND UI
+   Top header + search + hero + product section
+   ========================================================= */
+:root{
+  --am-blue:#0b5bea;
+  --am-blue2:#0877ff;
+  --am-cyan:#39c6ff;
+  --am-indigo:#1738c9;
+  --am-gold:#ffd34d;
+  --am-gold2:#ffb703;
+  --am-ink:#10213b;
+  --am-white:#fff;
+  --am-glass:rgba(255,255,255,.12);
+}
+
+body{
+  overflow-x:hidden!important;
+  background:
+    radial-gradient(circle at 10% 5%,rgba(73,154,255,.13),transparent 24%),
+    radial-gradient(circle at 90% 30%,rgba(255,211,77,.08),transparent 20%),
+    #eef3fa!important;
+}
+
+/* ---------- PREMIUM STICKY HEADER ---------- */
+.header{
+  position:sticky!important;
+  top:0!important;
+  z-index:9999!important;
+  width:100%!important;
+  padding:0!important;
+  background:
+    linear-gradient(135deg,#0647c8 0%,#0875f5 48%,#28b5ff 100%)!important;
+  border-bottom:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:
+    0 12px 32px rgba(4,48,125,.28),
+    inset 0 -1px 0 rgba(255,255,255,.20)!important;
+  overflow:visible!important;
+}
+
+.header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(255,255,255,.18),transparent 18%),
+    radial-gradient(circle at 86% 0%,rgba(255,255,255,.13),transparent 22%);
+}
+
+.head{
+  position:relative!important;
+  z-index:2!important;
+  width:100%!important;
+  max-width:1400px!important;
+  margin:auto!important;
+  padding:12px 18px 14px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  flex-wrap:wrap!important;
+}
+
+.brand{
+  min-width:220px!important;
+  flex:0 0 auto!important;
+  filter:drop-shadow(0 6px 12px rgba(0,25,90,.25));
+}
+
+.mark{
+  width:50px!important;
+  height:50px!important;
+  border-radius:15px!important;
+  background:linear-gradient(145deg,#ffffff,#dceaff)!important;
+  color:#1260d9!important;
+  box-shadow:
+    0 9px 18px rgba(0,25,90,.28),
+    inset 0 2px 3px rgba(255,255,255,.95)!important;
+  transform:perspective(500px) rotateX(3deg);
+}
+
+.brand b{
+  font-size:21px!important;
+  letter-spacing:-.3px!important;
+  color:#fff!important;
+}
+
+.brand small{
+  color:rgba(255,255,255,.78)!important;
+}
+
+/* Search always occupies ONE dedicated position under brand row on mobile */
+.search{
+  order:3!important;
+  flex:1 1 100%!important;
+  width:100%!important;
+  height:52px!important;
+  border-radius:15px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:2px solid rgba(255,255,255,.72)!important;
+  box-shadow:
+    0 10px 24px rgba(0,24,88,.24),
+    inset 0 1px 0 #fff!important;
+  transform:translateZ(0);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.search:focus-within{
+  transform:translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(0,24,88,.28),
+    0 0 0 4px rgba(255,211,77,.20),
+    inset 0 1px 0 #fff!important;
+}
+
+.search input{
+  font-size:16px!important;
+  color:#172b46!important;
+  background:#fff!important;
+}
+
+.search button{
+  width:62px!important;
+  font-size:22px!important;
+  background:linear-gradient(180deg,#fff,#f1f6ff)!important;
+}
+
+/* language + theme */
+.headBtns{
+  margin-left:auto!important;
+  display:flex!important;
+  gap:8px!important;
+}
+
+.iconBtn{
+  height:50px!important;
+  min-width:50px!important;
+  border-radius:14px!important;
+  background:linear-gradient(145deg,#fff,#edf4ff)!important;
+  color:#15304d!important;
+  border:1px solid rgba(255,255,255,.8)!important;
+  box-shadow:
+    0 8px 18px rgba(0,30,90,.20),
+    inset 0 1px 0 #fff!important;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+
+.iconBtn:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 12px 24px rgba(0,30,90,.25),inset 0 1px 0 #fff!important;
+}
+
+/* ---------- HERO: PREMIUM 3D GLASS CARD ---------- */
+.hero{
+  position:relative!important;
+  width:calc(100% - 20px)!important;
+  max-width:1400px!important;
+  margin:18px auto 20px!important;
+  min-height:0!important;
+  padding:30px 32px 32px!important;
+  border-radius:28px!important;
+  display:block!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(255,255,255,.27),transparent 16%),
+    radial-gradient(circle at 15% 90%,rgba(74,221,255,.30),transparent 28%),
+    linear-gradient(135deg,#073b9c 0%,#0867e8 45%,#16a8f4 100%)!important;
+  border:1px solid rgba(255,255,255,.34)!important;
+  box-shadow:
+    0 25px 60px rgba(0,60,160,.28),
+    inset 0 1px 0 rgba(255,255,255,.45)!important;
+  transform:translateZ(0);
+  animation:amHeroIn .8s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:520px;height:520px;
+  right:-230px;top:-270px;
+  border-radius:50%;
+  background:linear-gradient(145deg,rgba(255,255,255,.23),rgba(255,255,255,0));
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:0 0 80px rgba(80,205,255,.18);
+  animation:amOrb 8s ease-in-out infinite;
+  z-index:-1;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:300px;height:300px;
+  left:-170px;bottom:-180px;
+  border-radius:50%;
+  background:linear-gradient(145deg,rgba(255,211,77,.18),rgba(255,255,255,0));
+  border:1px solid rgba(255,255,255,.13);
+  z-index:-1;
+}
+
+.heroText{
+  padding:0!important;
+  max-width:980px!important;
+}
+
+.am-premium-content{
+  width:100%!important;
+  max-width:1050px!important;
+  position:relative!important;
+  z-index:3!important;
+}
+
+.am-premium-content h1{
+  display:block!important;
+  width:max-content;
+  max-width:100%;
+  font-size:clamp(25px,4.4vw,54px)!important;
+  line-height:1.08!important;
+  margin:4px 0 13px!important;
+  padding:0 0 12px!important;
+  font-weight:950!important;
+  letter-spacing:.2px!important;
+  color:transparent!important;
+  background:linear-gradient(100deg,#fff 0%,#fff9dc 22%,#ffd34d 50%,#fff4b0 75%,#fff 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  text-shadow:0 5px 20px rgba(0,20,80,.28)!important;
+  animation:amTitle .8s .12s both;
+}
+
+.am-premium-content h1::before{
+  content:"✦";
+  color:#ffd34d!important;
+  margin-right:7px;
+  font-size:.55em;
+  vertical-align:middle;
+  filter:drop-shadow(0 0 8px rgba(255,211,77,.7));
+}
+
+.am-premium-content h1::after{
+  width:115px!important;
+  height:4px!important;
+  background:linear-gradient(90deg,#ffd34d,#fff3a6,transparent)!important;
+  box-shadow:0 0 16px rgba(255,211,77,.55)!important;
+}
+
+/* premium pill */
+.am-tagline{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  margin:0 0 10px!important;
+  padding:7px 12px!important;
+  border-radius:999px!important;
+  color:#fff9d9!important;
+  background:linear-gradient(135deg,rgba(255,211,77,.20),rgba(255,255,255,.10))!important;
+  border:1px solid rgba(255,220,100,.42)!important;
+  box-shadow:
+    0 7px 18px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.25)!important;
+  animation:amFloat .7s .25s both;
+}
+
+.am-lead{
+  max-width:900px!important;
+  color:rgba(255,255,255,.94)!important;
+  line-height:1.55!important;
+  animation:amFade .7s .32s both;
+}
+
+.am-notice{
+  position:relative!important;
+  max-width:920px!important;
+  margin:12px 0!important;
+  padding:13px 16px!important;
+  border-radius:15px!important;
+  background:linear-gradient(135deg,rgba(0,44,120,.30),rgba(255,255,255,.10))!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  border-left:5px solid #ffd34d!important;
+  box-shadow:
+    0 10px 25px rgba(0,25,90,.18),
+    inset 0 1px 0 rgba(255,255,255,.20)!important;
+  backdrop-filter:blur(10px);
+  animation:amNotice .75s .4s both;
+}
+
+.am-notice b{color:#fff!important}
+.am-notice p{color:rgba(255,255,255,.80)!important}
+
+.am-store-note{
+  color:#fff!important;
+  animation:amFade .7s .48s both;
+}
+
+.am-store-note strong{
+  color:#ffe27a!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.am-brand-line{
+  border-top:1px solid rgba(255,255,255,.20)!important;
+  animation:amFade .7s .55s both;
+}
+
+/* ---------- PRODUCTS SECTION: GLASS / 3D ---------- */
+.toolbar{
+  position:relative!important;
+  width:calc(100% - 20px)!important;
+  max-width:1400px!important;
+  margin:0 auto!important;
+  padding:18px 20px 12px!important;
+  border:1px solid rgba(255,255,255,.75)!important;
+  border-radius:24px 24px 0 0!important;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.98),rgba(242,248,255,.94))!important;
+  box-shadow:
+    0 12px 35px rgba(34,74,130,.13),
+    inset 0 1px 0 #fff!important;
+  overflow:hidden!important;
+}
+
+.toolbar::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:5px;
+  background:linear-gradient(#1688ff,#6ddcff);
+  box-shadow:0 0 16px rgba(22,136,255,.4);
+}
+
+.sectionTitle{
+  position:relative!important;
+  z-index:2;
+}
+
+.sectionIcon{
+  width:48px!important;
+  height:48px!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,#fff,#e7f1ff)!important;
+  box-shadow:
+    0 9px 20px rgba(20,100,220,.16),
+    inset 0 1px 0 #fff!important;
+  transform:perspective(500px) rotateY(-7deg);
+  animation:amIconFloat 3.5s ease-in-out infinite;
+}
+
+.toolbar h2{
+  font-size:24px!important;
+  font-weight:950!important;
+  background:linear-gradient(90deg,#10213b,#126de8,#0b4ab8)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+
+.sectionHint{
+  color:#71819a!important;
+  font-weight:800!important;
+}
+
+.filters{
+  width:calc(100% - 20px)!important;
+  max-width:1400px!important;
+  margin:0 auto!important;
+  padding:0 20px 17px!important;
+  border:1px solid rgba(255,255,255,.75)!important;
+  border-top:0!important;
+  border-radius:0 0 24px 24px!important;
+  background:rgba(255,255,255,.96)!important;
+  box-shadow:0 14px 35px rgba(34,74,130,.12)!important;
+}
+
+.chip{
+  border:1px solid #dbe7f4!important;
+  background:linear-gradient(145deg,#fff,#f4f8fd)!important;
+  color:#40536b!important;
+  font-weight:800!important;
+  border-radius:999px!important;
+  padding:9px 16px!important;
+  box-shadow:0 4px 10px rgba(25,65,120,.07)!important;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease!important;
+}
+
+.chip:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 16px rgba(25,65,120,.13)!important;
+}
+
+.chip.active{
+  color:#fff!important;
+  border-color:#1677ef!important;
+  background:linear-gradient(135deg,#0a61e8,#1da5ff)!important;
+  box-shadow:0 8px 18px rgba(10,97,232,.27)!important;
+}
+
+/* ---------- PRODUCT CARDS ---------- */
+.products{
+  width:calc(100% - 20px)!important;
+  max-width:1400px!important;
+  margin:0 auto!important;
+  padding:14px!important;
+  gap:14px!important;
+  border:0!important;
+  background:transparent!important;
+}
+
+.card{
+  border:1px solid rgba(211,224,239,.90)!important;
+  border-radius:20px!important;
+  padding:12px!important;
+  background:linear-gradient(145deg,#fff,#f7faff)!important;
+  box-shadow:
+    0 10px 24px rgba(30,70,120,.11),
+    inset 0 1px 0 #fff!important;
+  overflow:hidden!important;
+  transform:translateZ(0);
+  animation:amCardIn .6s both;
+}
+
+.card:hover{
+  transform:translateY(-6px) perspective(900px) rotateX(1deg)!important;
+  box-shadow:
+    0 20px 38px rgba(22,74,145,.19),
+    0 0 0 1px rgba(22,119,239,.10)!important;
+}
+
+.pic{
+  border-radius:15px!important;
+  background:
+    radial-gradient(circle at 50% 35%,#fff,#edf3fa 72%)!important;
+  box-shadow:inset 0 1px 0 #fff!important;
+}
+
+.buy{
+  border-radius:12px!important;
+  background:linear-gradient(135deg,#ffb000,#ff8a00)!important;
+  box-shadow:0 8px 17px rgba(255,150,0,.23)!important;
+  transition:transform .2s ease,box-shadow .2s ease!important;
+}
+
+.buy:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 23px rgba(255,150,0,.30)!important;
+}
+
+/* ---------- 3D ANIMATIONS ---------- */
+@keyframes amHeroIn{
+  from{opacity:0;transform:translateY(18px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes amTitle{
+  from{opacity:0;transform:translateY(12px) perspective(700px) rotateX(8deg)}
+  to{opacity:1;transform:translateY(0) perspective(700px) rotateX(0)}
+}
+@keyframes amFade{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+@keyframes amNotice{
+  from{opacity:0;transform:translateX(-16px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+@keyframes amOrb{
+  0%,100%{transform:translate3d(0,0,0) rotate(0)}
+  50%{transform:translate3d(-18px,18px,0) rotate(8deg)}
+}
+@keyframes amFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+@keyframes amIconFloat{
+  0%,100%{transform:perspective(500px) rotateY(-7deg) translateY(0)}
+  50%{transform:perspective(500px) rotateY(7deg) translateY(-3px)}
+}
+@keyframes amCardIn{
+  from{opacity:0;transform:translateY(15px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+
+/* ---------- MOBILE: NO OVERLAP / CLEAN FIT ---------- */
+@media(max-width:700px){
+  .head{
+    padding:10px 12px 12px!important;
+    gap:8px!important;
+  }
+  .brand{min-width:0!important;flex:1 1 auto!important}
+  .mark{width:46px!important;height:46px!important;border-radius:14px!important}
+  .brand b{font-size:19px!important}
+  .headBtns{margin-left:0!important}
+  .head select.iconBtn{min-width:112px!important;height:46px!important}
+  .headBtns .iconBtn:last-child{height:46px!important;min-width:46px!important}
+  .search{
+    flex:1 1 100%!important;
+    height:50px!important;
+    margin-top:1px!important;
+  }
+  .header{padding-bottom:2px!important}
+  .hero{
+    width:calc(100% - 12px)!important;
+    margin:12px auto 14px!important;
+    padding:22px 16px 22px!important;
+    border-radius:22px!important;
+  }
+  .am-premium-content h1{
+    font-size:25px!important;
+    line-height:1.12!important;
+    margin:3px 0 10px!important;
+  }
+  .am-tagline{font-size:11px!important;padding:6px 10px!important}
+  .am-lead{font-size:12px!important;line-height:1.5!important}
+  .am-notice{padding:10px 11px!important;margin:9px 0!important}
+  .am-notice b{font-size:11.5px!important}
+  .am-notice p{font-size:10px!important}
+  .am-store-note{font-size:12px!important;line-height:1.5!important}
+  .am-brand-line{margin-top:8px!important;padding-top:8px!important}
+  .am-brand-line strong{font-size:11px!important}
+  .toolbar{
+    width:calc(100% - 12px)!important;
+    padding:15px 14px 9px!important;
+    border-radius:20px 20px 0 0!important;
+  }
+  .toolbar h2{font-size:20px!important}
+  .sectionIcon{width:42px!important;height:42px!important}
+  .sectionHint{font-size:10px!important}
+  .filters{
+    width:calc(100% - 12px)!important;
+    padding:0 12px 13px!important;
+  }
+  .chip{padding:8px 13px!important;font-size:12px!important}
+  .products{
+    width:calc(100% - 8px)!important;
+    padding:10px 4px!important;
+    gap:9px!important;
+  }
+  .card{
+    border-radius:16px!important;
+    padding:9px!important;
+  }
+  .pic{height:155px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+
 </style>
 </head>
 <body class="light">
