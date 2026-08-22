@@ -272,66 +272,40 @@ header, .header, .siteHeader{
 .hero-logo,.hero-card,.heroVisual,.brand-card,.rice-hero-card{display:none !important;}
 
 
-/* ===== CUSTOM CATEGORY MANAGER ===== */
+/* ===== CATEGORY CUSTOMIZER ===== */
 .categoryManager{
-  margin:22px 0;
+  margin-top:22px;
   padding:18px;
-  border:1px solid #e2e9f3;
+  border:1px solid #dfe8f4;
   border-radius:18px;
-  background:linear-gradient(145deg,#fafdff,#f1f6fd);
+  background:linear-gradient(145deg,#f8fbff,#eef5ff);
 }
-.sectionTitleRow h3{margin:0 0 5px}
-.sectionTitleRow small{color:#68737d}
-.categoryAddRow{display:flex;gap:10px;margin-top:14px}
+.categoryManager h3{margin:0 0 6px;font-size:18px;color:#10233f}
+.categoryHelp{margin:0 0 14px;color:#687789;font-size:13px;line-height:1.5}
+.categoryAddRow{display:flex;gap:8px;align-items:stretch}
 .categoryAddRow input{
-  flex:1;min-width:0;border:1px solid #d9e2ed;border-radius:11px;
-  padding:12px 13px;font-size:14px;outline:none;background:#fff;
+  flex:1;min-width:0;border:1px solid #d7e1ee;border-radius:10px;
+  padding:12px;background:#fff;font-size:14px;outline:none;
 }
 .categoryAddRow input:focus{border-color:#2874f0;box-shadow:0 0 0 3px #2874f018}
-.categoryAdminList{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.categoryAddBtn{white-space:nowrap;margin:0!important}
+#categoryAdminList{display:grid;gap:8px;margin-top:14px}
 .categoryAdminItem{
-  display:flex;align-items:center;gap:7px;padding:8px 9px 8px 12px;
-  background:#fff;border:1px solid #e0e7f0;border-radius:999px;
-  box-shadow:0 4px 12px rgba(20,50,90,.06)
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:#fff;border:1px solid #e2e9f2;border-radius:12px;padding:10px 12px;
 }
-.categoryAdminItem b{font-size:13px}
-.categoryAdminItem button{
-  border:0;border-radius:50%;width:27px;height:27px;cursor:pointer;font-weight:900
+.categoryAdminName{font-weight:800;color:#203047}
+.categoryAdminActions{display:flex;gap:6px}
+.categoryAdminActions button{
+  border:0;border-radius:8px;padding:7px 10px;font-weight:800;cursor:pointer;
 }
-.catEdit{background:#eaf3ff;color:#1763c5}
-.catDelete{background:#fff0f0;color:#d52b2b}
-.catDefault{font-size:10px;color:#68737d}
-
-/* ===== MULTIPLE IMAGE ASPECT RATIOS ===== */
-.aspectBtns{
-  display:grid !important;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:8px !important;
-  margin-top:12px !important;
-}
-.aspectBtn{
-  border:1px solid #dbe2ea !important;
-  background:#fff !important;
-  padding:10px 8px !important;
-  border-radius:10px !important;
-  font-size:12px;
-  cursor:pointer;
-}
-.aspectBtn.active{
-  background:linear-gradient(135deg,#eaf3ff,#dcecff) !important;
-  border-color:#2874f0 !important;
-  color:#1557c0 !important;
-  font-weight:900 !important;
-  box-shadow:0 5px 14px rgba(40,116,240,.12);
-}
-.aspectHelp{
-  margin-top:9px;padding:9px 11px;border-radius:10px;
-  background:#f5f8fc;color:#657383;font-size:12px;line-height:1.45
-}
-@media(max-width:650px){
+.categoryEdit{background:#e9f2ff;color:#1762c4}
+.categoryDelete{background:#fff0f0;color:#d52d2d}
+@media(max-width:560px){
   .categoryAddRow{flex-direction:column}
-  .categoryAddRow .save{width:100%}
-  .aspectBtns{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  .categoryAddBtn{width:100%}
+  .categoryAdminItem{align-items:flex-start}
+  .categoryAdminActions{flex-shrink:0}
 }
 
 </style>
@@ -358,7 +332,11 @@ header, .header, .siteHeader{
 </section>
 
 <div class="toolbar" id="products"><div class="sectionTitle"><span class="sectionIcon">🍚</span><div><h2>চালের পণ্য</h2><small id="count">সব পণ্য</small></div></div><span class="sectionHint">আপনার পছন্দের চাল বেছে নিন</span></div>
-<div class="filters" id="categoryChips"></div></section>
+<div class="filters" id="categoryFilters"></div>
+<section class="products" id="grid"></section>
+
+<section class="about"><h2>আমাদের সম্পর্কে</h2><p id="about">Anil Mandal Rice Store-এ দৈনন্দিন রান্না ও বিশেষ অনুষ্ঠানের জন্য মানসম্মত চালের বিভিন্ন সংগ্রহ পাওয়া যায়।</p></section>
+<section class="contact"><div class="contactBox"><b>📞 ফোন</b><span id="phone">নম্বর যোগ করুন</span></div><div class="contactBox"><b>💬 WhatsApp</b><span id="wa">WhatsApp নম্বর যোগ করুন</span></div><div class="contactBox"><b>📍 দোকানের ঠিকানা</b><span id="address">ঠিকানা যোগ করুন</span></div></section>
 
 <footer><b>Anil Mandal Rice Store</b><div>© <span id="year"></span> • সকল অধিকার সংরক্ষিত</div>
 <button class="settingsMini" onclick="ownerLogin()" title="Owner Settings" aria-label="Owner Settings">⚙</button>
@@ -370,21 +348,20 @@ header, .header, .siteHeader{
 <div class="field"><label>দোকানের নাম</label><input id="shop"></div><div class="field"><label>ফোন</label><input id="phoneIn"></div><div class="field"><label>WhatsApp (91...)</label><input id="waIn"></div><div class="field"><label>ঠিকানা</label><input id="addrIn"></div><div class="field full"><label>About</label><textarea id="aboutIn"></textarea></div>
 </div><br><button class="save" onclick="saveSettings()">Save Settings</button>
 <div class="categoryManager">
-  <div class="sectionTitleRow">
-    <div><h3>🏷️ Categories / ক্যাটাগরি</h3><small>এখান থেকে নিজের মতো নতুন ক্যাটাগরি যোগ, rename বা delete করতে পারবেন।</small></div>
-  </div>
-  <div class="categoryAddRow">
-    <input id="newCatName" placeholder="যেমন: মিনিকেট, আতপ চাল, Premium..." maxlength="40">
-    <button class="save" onclick="addCategory()">＋ Add Category</button>
-  </div>
-  <div id="categoryAdminList" class="categoryAdminList"></div>
+<h3>🏷️ ক্যাটাগরি কাস্টমাইজ</h3>
+<p class="categoryHelp">এখান থেকে নিজের মতো নতুন ক্যাটাগরি যোগ, নাম পরিবর্তন বা মুছে ফেলতে পারবেন।</p>
+<div class="categoryAddRow">
+<input id="newCategoryName" placeholder="নতুন ক্যাটাগরির নাম লিখুন">
+<button class="save categoryAddBtn" onclick="addCategory()">＋ ক্যাটাগরি যোগ করুন</button>
 </div>
-<div class="adminList"><h3>🍚 Products / পণ্য</h3><button class="save" onclick="editProduct()">＋ নতুন পণ্য যোগ করুন</button><div id="adminList"></div></div>
+<div id="categoryAdminList"></div>
+</div>
+<div class="adminList"><h3>Products</h3><button class="save" onclick="editProduct()">＋ নতুন পণ্য যোগ করুন</button><div id="adminList"></div></div>
 </div></div>
 
 <div class="adminPanel" id="productAdmin"><div class="panel">
 <div class="panelHead"><h2 id="ptitle">নতুন পণ্য</h2><button class="close" onclick="closeProduct()">×</button></div>
-<div class="form"><div class="field"><label>পণ্যের নাম</label><input id="pname"></div><div class="field"><label>দাম</label><input id="pprice"></div><div class="field"><label>ওজন</label><input id="pweight" value="1 kg"></div><div class="field"><label>ক্যাটাগরি</label><select id="pcat"></select><small style="color:#68737d">নতুন ক্যাটাগরি Customize → Categories থেকে যোগ করুন।</small></div><div class="field full">
+<div class="form"><div class="field"><label>পণ্যের নাম</label><input id="pname"></div><div class="field"><label>দাম</label><input id="pprice"></div><div class="field"><label>ওজন</label><input id="pweight" value="1 kg"></div><div class="field"><label>ক্যাটাগরি</label><select id="pcat"></select></div><div class="field full">
 <label>📸 চালের ছবি আপলোড করুন</label>
 <input id="pfile" type="file" accept="image/*" onchange="openCropFromFile(event)">
 <div class="imageActions">
@@ -398,7 +375,7 @@ header, .header, .siteHeader{
   <div class="cropBox">
     <div class="cropHead"><div><b>✂️ ছবি Crop করুন</b><small style="display:block;color:#68737d;margin-top:3px">ছবিটি ধরে টেনে position ঠিক করুন</small></div><button class="close" onclick="closeCrop()">×</button></div>
     <div class="cropStage" id="cropStage">
-      <div class="cropViewport" id="cropViewport" style="aspect-ratio:4/3"></div>
+      <div class="cropViewport" id="cropViewport"></div>
       <img id="cropImage" alt="Crop preview">
     </div>
     <div class="cropControls">
@@ -407,13 +384,9 @@ header, .header, .siteHeader{
       <button class="cropBtn cropSave" onclick="applyCrop()">✓ Crop & Save</button>
     </div>
     <div class="aspectBtns">
-      <button class="aspectBtn active" onclick="setCropRatio('4/3',this)">4:3<br><small>Product</small></button>
-      <button class="aspectBtn" onclick="setCropRatio('1/1',this)">1:1<br><small>Square</small></button>
-      <button class="aspectBtn" onclick="setCropRatio('3/4',this)">3:4<br><small>Portrait</small></button>
-      <button class="aspectBtn" onclick="setCropRatio('16/9',this)">16:9<br><small>Banner</small></button>
-      <button class="aspectBtn" onclick="setCropRatio('9/16',this)">9:16<br><small>Story</small></button>
+      <button class="aspectBtn active" id="ratio43" onclick="setCropRatio('4/3',this)">Product 4:3</button>
+      <button class="aspectBtn" id="ratio11" onclick="setCropRatio('1/1',this)">Square 1:1</button>
     </div>
-    <div class="aspectHelp">📐 <b>Aspect Ratio:</b> যেই ratio বেছে নেবেন, crop frame সেই shape-এ হবে। ছবির উপর আঙুল দিয়ে drag এবং Zoom slider দিয়ে framing ঠিক করতে পারবেন।</div>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -423,34 +396,15 @@ const DEFAULT=[
 {id:1,name:"Premium Basmati Rice",price:"₹120 / kg",weight:"1 kg",category:"premium",image:"",desc:"দীর্ঘ দানার সুগন্ধি চাল, বিরিয়ানি ও বিশেষ খাবারের জন্য উপযুক্ত।"},
 {id:2,name:"Everyday Fine Rice",price:"₹65 / kg",weight:"1 kg",category:"fine",image:"",desc:"প্রতিদিনের পরিবারের রান্নার জন্য নরম ও সুস্বাদু চাল।"},
 {id:3,name:"Gobindobhog Rice",price:"₹95 / kg",weight:"1 kg",category:"fragrant",image:"",desc:"সুগন্ধি ছোট দানার চাল, বাঙালি রান্নার জন্য দারুণ।"}];
-let data=JSON.parse(localStorage.getItem("anilMandalStoreV2")||"null")||{
-  shop:"Anil Mandal",phone:"",wa:"",address:"",
-  about:"Anil Mandal Rice Store-এ দৈনন্দিন রান্না ও বিশেষ অনুষ্ঠানের জন্য মানসম্মত চালের বিভিন্ন সংগ্রহ পাওয়া যায়।",
-  categories:[
-    {id:"basmati",name:"বাসমতি",system:true},
-    {id:"fine",name:"ফাইন চাল",system:true},
-    {id:"fragrant",name:"সুগন্ধি চাল",system:true},
-    {id:"premium",name:"প্রিমিয়াম",system:true},
-    {id:"other",name:"অন্যান্য",system:true}
-  ],
-  products:DEFAULT
-};
-if(!Array.isArray(data.categories)){
-  data.categories=[
-    {id:"basmati",name:"বাসমতি",system:true},
-    {id:"fine",name:"ফাইন চাল",system:true},
-    {id:"fragrant",name:"সুগন্ধি চাল",system:true},
-    {id:"premium",name:"প্রিমিয়াম",system:true},
-    {id:"other",name:"অন্যান্য",system:true}
-  ];
-}
-if(!Array.isArray(data.products)) data.products=[];
-/* Automatically create a category for any old product category that is not yet listed. */
-data.products.forEach(p=>{
-  if(p.category && !data.categories.some(c=>c.id===p.category)){
-    data.categories.push({id:p.category,name:p.category,system:false});
-  }
-});
+const DEFAULT_CATS=[
+{id:"basmati",label:"বাসমতি"},
+{id:"fine",label:"ফাইন চাল"},
+{id:"fragrant",label:"সুগন্ধি চাল"},
+{id:"premium",label:"প্রিমিয়াম"},
+{id:"other",label:"অন্যান্য"}
+];
+let data=JSON.parse(localStorage.getItem("anilMandalStoreV2")||"null")||{shop:"Anil Mandal",phone:"",wa:"",address:"",about:"Anil Mandal Rice Store-এ দৈনন্দিন রান্না ও বিশেষ অনুষ্ঠানের জন্য মানসম্মত চালের বিভিন্ন সংগ্রহ পাওয়া যায়।",products:DEFAULT,categories:DEFAULT_CATS};
+if(!Array.isArray(data.categories)||!data.categories.length)data.categories=DEFAULT_CATS.map(x=>({...x}));
 let cat="all",editId=null;
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 function save(){localStorage.setItem("anilMandalStoreV2",JSON.stringify(data))}
@@ -470,6 +424,69 @@ ta:{search:"அரிசி அல்லது பொருளின் பெ�
 te:{search:"బియ్యం లేదా ఉత్పత్తి పేరును వెతకండి...",top:"✦ తాజా • నాణ్యత • నమ్మకమైన బియ్యం ✦",rice:"బియ్యం ఉత్పత్తులు",view:"బియ్యం చూడండి →",buy:"ఇప్పుడే కొనండి",about:"మా గురించి",all:"అన్నీ",basmati:"బాస్మతి",fine:"ఫైన్ బియ్యం",fragrant:"సువాసన బియ్యం",premium:"ప్రీమియం",other:"ఇతర",quality:"QUALITY",hide:"Customize Hide",unhide:"Customize Unhide"},
 ur:{search:"چاول یا پروڈکٹ کا نام تلاش کریں...",top:"✦ تازہ • معیاری • قابل اعتماد چاول ✦",rice:"چاول کی مصنوعات",view:"چاول دیکھیں →",buy:"ابھی خریدیں",about:"ہمارے بارے میں",all:"تمام",basmati:"باسمتی",fine:"فائن چاول",fragrant:"خوشبودار چاول",premium:"پریمیم",other:"دیگر",quality:"QUALITY",hide:"Customize Hide",unhide:"Customize Unhide"}
 };
+function categoryLabel(id){
+  const t=LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn;
+  const built={basmati:t.basmati,fine:t.fine,fragrant:t.fragrant,premium:t.premium,other:t.other};
+  const c=data.categories.find(x=>x.id===id);
+  return built[id]||c?.label||id;
+}
+function renderCategories(){
+  const wrap=document.getElementById("categoryFilters");
+  if(!wrap)return;
+  const allText=(LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn).all;
+  wrap.innerHTML=`<button class="chip ${cat==="all"?"active":""}" onclick="setCat('all',this)">${esc(allText)}</button>`+
+    data.categories.map(c=>`<button class="chip ${cat===c.id?"active":""}" onclick="setCat('${esc(c.id)}',this)">${esc(categoryLabel(c.id))}</button>`).join("");
+}
+function renderCategoryAdmin(){
+  const box=document.getElementById("categoryAdminList");
+  if(!box)return;
+  box.innerHTML=data.categories.map(c=>`
+    <div class="categoryAdminItem">
+      <span class="categoryAdminName">${esc(categoryLabel(c.id))}</span>
+      <div class="categoryAdminActions">
+        <button class="categoryEdit" onclick="renameCategory('${esc(c.id)}')">✏️ Edit</button>
+        <button class="categoryDelete" onclick="deleteCategory('${esc(c.id)}')">🗑️ Delete</button>
+      </div>
+    </div>`).join("");
+}
+function renderCategorySelect(selected){
+  const sel=document.getElementById("pcat");
+  if(!sel)return;
+  sel.innerHTML=data.categories.map(c=>`<option value="${esc(c.id)}">${esc(categoryLabel(c.id))}</option>`).join("");
+  if(selected && data.categories.some(c=>c.id===selected))sel.value=selected;
+  else if(data.categories.length)sel.value=data.categories[0].id;
+}
+function addCategory(){
+  const input=document.getElementById("newCategoryName");
+  const name=(input.value||"").trim();
+  if(!name){alert("ক্যাটাগরির নাম লিখুন।");return}
+  if(name.length>30){alert("ক্যাটাগরির নাম 30 অক্ষরের মধ্যে রাখুন।");return}
+  if(data.categories.some(c=>c.label.trim().toLowerCase()===name.toLowerCase())){alert("এই ক্যাটাগরি আগে থেকেই আছে।");return}
+  const id="custom_"+Date.now();
+  data.categories.push({id,label:name});
+  save(); input.value=""; render(); renderCategoryAdmin(); renderCategorySelect(id);
+  toast("নতুন ক্যাটাগরি যোগ হয়েছে");
+}
+function renameCategory(id){
+  const c=data.categories.find(x=>x.id===id); if(!c)return;
+  const name=prompt("নতুন ক্যাটাগরির নাম:",c.label);
+  if(name===null)return;
+  const n=name.trim(); if(!n)return;
+  if(data.categories.some(x=>x.id!==id && x.label.toLowerCase()===n.toLowerCase())){alert("এই নামে ক্যাটাগরি আছে।");return}
+  c.label=n; save(); render(); renderCategoryAdmin(); toast("ক্যাটাগরির নাম বদলানো হয়েছে");
+}
+function deleteCategory(id){
+  const c=data.categories.find(x=>x.id===id); if(!c)return;
+  if(data.categories.length<=1){alert("কমপক্ষে একটি ক্যাটাগরি রাখতে হবে।");return}
+  const used=data.products.filter(p=>p.category===id).length;
+  const msg=used?`"${c.label}"-এ ${used}টি পণ্য আছে। Delete করলে সেগুলো প্রথম ক্যাটাগরিতে চলে যাবে। চালিয়ে যাবেন?`:`"${c.label}" ক্যাটাগরি Delete করবেন?`;
+  if(!confirm(msg))return;
+  const fallback=data.categories.find(x=>x.id!==id)?.id||"";
+  data.products.forEach(p=>{if(p.category===id)p.category=fallback});
+  data.categories=data.categories.filter(x=>x.id!==id);
+  if(cat===id)cat="all";
+  save(); render(); renderCategoryAdmin(); toast("ক্যাটাগরি মুছে ফেলা হয়েছে");
+}
 function setLanguage(lang){
   localStorage.setItem("anilLangV2",lang);
   const t=LANG[lang]||LANG.bn;
@@ -478,75 +495,32 @@ function setLanguage(lang){
   document.querySelector(".heroText button").textContent=t.view;
   document.querySelector(".toolbar h2").textContent=t.rice;
   document.querySelector(".about h2").textContent=t.about;
-  renderCategories();
   render();
 }
-function renderCategories(){
-  const t=LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn;
-  const wrap=document.getElementById("categoryChips");
-  if(wrap){
-    wrap.innerHTML=`<button class="chip ${cat==="all"?"active":""}" onclick="setCat('all',this)">${t.all}</button>`+
-      data.categories.map(c=>`<button class="chip ${cat===c.id?"active":""}" onclick="setCat('${esc(c.id)}',this)">${esc(c.name)}</button>`).join("");
-  }
-  const sel=document.getElementById("pcat");
-  if(sel){
-    const current=sel.value;
-    sel.innerHTML=data.categories.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join("");
-    if(data.categories.some(c=>c.id===current)) sel.value=current;
-  }
-  const list=document.getElementById("categoryAdminList");
-  if(list){
-    list.innerHTML=data.categories.map(c=>`<div class="categoryAdminItem">
-      <b>${esc(c.name)}</b>${c.system?`<span class="catDefault">default</span>`:""}
-      <button class="catEdit" onclick="renameCategory('${esc(c.id)}')" title="Rename">✎</button>
-      ${c.system?"" : `<button class="catDelete" onclick="deleteCategory('${esc(c.id)}')" title="Delete">×</button>`}
-    </div>`).join("");
-  }
+function render(){
+  document.getElementById("about").textContent=data.about;
+  document.getElementById("phone").textContent=data.phone||"নম্বর যোগ করুন";
+  document.getElementById("wa").textContent=data.wa||"WhatsApp নম্বর যোগ করুন";
+  document.getElementById("address").textContent=data.address||"ঠিকানা যোগ করুন";
+  document.getElementById("year").textContent=new Date().getFullYear();
+  renderCategories(); renderCategoryAdmin(); renderCategorySelect(document.getElementById("pcat")?.value);
+  filterProducts(); adminList();
 }
-function render(){document.getElementById("about").textContent=data.about;document.getElementById("phone").textContent=data.phone||"নম্বর যোগ করুন";document.getElementById("wa").textContent=data.wa||"WhatsApp নম্বর যোগ করুন";document.getElementById("address").textContent=data.address||"ঠিকানা যোগ করুন";document.getElementById("year").textContent=new Date().getFullYear();renderCategories();filterProducts();adminList()}
-function filterProducts(){let q=document.getElementById("search").value.toLowerCase().trim();let list=data.products.filter(p=>(cat==="all"||p.category===cat)&&(!q||[p.name,p.desc,p.category,p.price,p.weight].join(" ").toLowerCase().includes(q)));document.getElementById("count").textContent=list.length+"টি পণ্য";document.getElementById("grid").innerHTML=list.map(p=>`<article class="card"><div class="pic">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:`<div class="riceIcon">🍚</div>`}</div><span class="badge">${(LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn).quality}</span><h3>${esc(p.name)}</h3><div><span class="price">${esc(p.price)}</span><span class="mrp">${esc(p.weight)}</span></div><p class="desc">${esc(p.desc)}</p><button class="buy" onclick="buy(${p.id})">${(LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn).buy}</button></article>`).join("")||"<p style='padding:25px'>কোনো পণ্য পাওয়া যায়নি।</p>"}
+function filterProducts(){
+  let q=document.getElementById("search").value.toLowerCase().trim();
+  let list=data.products.filter(p=>(cat==="all"||p.category===cat)&&(!q||[p.name,p.desc,p.category,p.price,p.weight].join(" ").toLowerCase().includes(q)));
+  document.getElementById("count").textContent=list.length+"টি পণ্য";
+  document.getElementById("grid").innerHTML=list.map(p=>`<article class="card"><div class="pic">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}">`:`<div class="riceIcon">🍚</div>`}</div><span class="badge">${(LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn).quality}</span><h3>${esc(p.name)}</h3><div><span class="price">${esc(p.price)}</span><span class="mrp">${esc(p.weight)}</span></div><p class="desc">${esc(p.desc)}</p><button class="buy" onclick="buy(${p.id})">${(LANG[localStorage.getItem("anilLangV2")||"bn"]||LANG.bn).buy}</button></article>`).join("")||"<p style='padding:25px'>কোনো পণ্য পাওয়া যায়নি।</p>"
+}
 function setCat(c,b){cat=c;document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");filterProducts()}
-function addCategory(){
-  const input=document.getElementById("newCatName"), name=input.value.trim();
-  if(!name){alert("ক্যাটাগরির নাম লিখুন।");return}
-  if(data.categories.some(c=>c.name.toLowerCase()===name.toLowerCase())){alert("এই ক্যাটাগরি আগে থেকেই আছে।");return}
-  const id="cat_"+Date.now();
-  data.categories.push({id,name,system:false});
-  save(); input.value=""; renderCategories(); filterProducts(); toast("নতুন ক্যাটাগরি যোগ হয়েছে");
-}
-function renameCategory(id){
-  const c=data.categories.find(x=>x.id===id); if(!c)return;
-  const name=prompt("নতুন ক্যাটাগরির নাম লিখুন:",c.name);
-  if(name===null)return;
-  const clean=name.trim(); if(!clean)return;
-  if(data.categories.some(x=>x.id!==id && x.name.toLowerCase()===clean.toLowerCase())){alert("এই নামে আরেকটি ক্যাটাগরি আছে।");return}
-  c.name=clean; save(); renderCategories(); filterProducts(); toast("ক্যাটাগরির নাম পরিবর্তন হয়েছে");
-}
-function deleteCategory(id){
-  const c=data.categories.find(x=>x.id===id); if(!c)return;
-  if(c.system){alert("Default category delete করা যাবে না। আপনি rename করতে পারবেন।");return}
-  const used=data.products.filter(p=>p.category===id).length;
-  if(used && !confirm(`এই ক্যাটাগরিতে ${used}টি পণ্য আছে। Delete করলে পণ্যগুলো 'অন্যান্য' ক্যাটাগরিতে যাবে। Continue?`))return;
-  data.products.forEach(p=>{if(p.category===id)p.category="other"});
-  data.categories=data.categories.filter(x=>x.id!==id);
-  if(cat===id)cat="all";
-  save(); renderCategories(); filterProducts(); adminList(); toast("ক্যাটাগরি মুছে ফেলা হয়েছে");
-}
+
 function buy(id){let p=data.products.find(x=>x.id===id),n=(data.wa||"").replace(/\D/g,"");if(!n){alert("Customize থেকে WhatsApp নম্বর যোগ করুন।");return}location.href="https://wa.me/"+n+"?text="+encodeURIComponent("নমস্কার Anil Mandal, আমি অর্ডার করতে চাই: "+p.name+" | "+p.price+" | "+p.weight)}
 function toggleTheme(){document.body.classList.toggle("dark");localStorage.setItem("anilTheme",document.body.classList.contains("dark")?"dark":"light")}
-function openAdmin(){shop.value=data.shop;phoneIn.value=data.phone;waIn.value=data.wa;addrIn.value=data.address;aboutIn.value=data.about;renderCategories();document.getElementById("admin").classList.add("open")}
+function openAdmin(){shop.value=data.shop;phoneIn.value=data.phone;waIn.value=data.wa;addrIn.value=data.address;aboutIn.value=data.about;document.getElementById("admin").classList.add("open")}
 function closeAdmin(){document.getElementById("admin").classList.remove("open")}
 function saveSettings(){data.shop=shop.value.trim()||"Anil Mandal";data.phone=phoneIn.value.trim();data.wa=waIn.value.trim();data.address=addrIn.value.trim();data.about=aboutIn.value.trim();save();render();closeAdmin();toast("Settings saved")}
 function adminList(){document.getElementById("adminList").innerHTML=data.products.map(p=>`<div class="adminItem"><div><b>${esc(p.name)}</b><br><small>${esc(p.price)} • ${esc(p.weight)}</small></div><div><button class="adminAction edit" onclick="editProduct(${p.id})">Edit</button> <button class="adminAction del" onclick="delProduct(${p.id})">Delete</button></div></div>`).join("")}
-function editProduct(id=null){
-  editId=id;
-  let p=id?data.products.find(x=>x.id===id):{name:"",price:"",weight:"1 kg",category:data.categories[0]?.id||"other",image:"",desc:""};
-  renderCategories();
-  pname.value=p.name;pprice.value=p.price;pweight.value=p.weight||"1 kg";
-  pcat.value=p.category||data.categories[0]?.id||"other";pdesc.value=p.desc||"";
-  pfile.value="";prev.src=p.image||"";prev.style.display=p.image?"block":"none";prev.dataset.image=p.image||"";
-  document.getElementById("admin").classList.remove("open");document.getElementById("productAdmin").classList.add("open")
-}
+function editProduct(id=null){editId=id;let p=id?data.products.find(x=>x.id===id):{name:"",price:"",weight:"1 kg",category:data.categories[0]?.id||"other",image:"",desc:""};pname.value=p.name;pprice.value=p.price;pweight.value=p.weight||"1 kg";renderCategorySelect(p.category);pcat.value=p.category||data.categories[0]?.id||"";pdesc.value=p.desc||"";pfile.value="";prev.src=p.image||"";prev.style.display=p.image?"block":"none";prev.dataset.image=p.image||"";document.getElementById("admin").classList.remove("open");document.getElementById("productAdmin").classList.add("open")}
 function closeProduct(){document.getElementById("productAdmin").classList.remove("open");openAdmin()}
 
 let cropSrc="",cropScale=1,cropX=0,cropY=0,cropRatio=4/3,cropBaseW=0,cropBaseH=0,cropStartX=0,cropStartY=0,dragging=false;
@@ -578,13 +552,11 @@ function fitCropImage(){
  cropScale=1;cropX=(vw-cropBaseW)/2;cropY=(vh-cropBaseH)/2;
 }
 function setCropRatio(r,b){
-  const parts=r.split("/").map(Number);
-  cropRatio=(parts[0]&&parts[1])?parts[0]/parts[1]:4/3;
-  document.querySelectorAll(".aspectBtn").forEach(x=>x.classList.remove("active"));
-  b.classList.add("active");
-  const vp=document.getElementById("cropViewport");
-  vp.style.aspectRatio=r;
-  setTimeout(()=>{fitCropImage();applyCropTransform()},30);
+ cropRatio=r==="1/1"?1:4/3;
+ document.querySelectorAll(".aspectBtn").forEach(x=>x.classList.remove("active"));b.classList.add("active");
+ const vp=document.getElementById("cropViewport");
+ vp.style.aspectRatio=r;
+ setTimeout(()=>{fitCropImage();applyCropTransform()},30);
 }
 function applyCropTransform(){
  const z=parseFloat(document.getElementById("cropZoom").value);
