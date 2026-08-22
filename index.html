@@ -517,6 +517,75 @@ header, .site-header, .topbar, .navbar {
   .am-footer-copy{font-size:12px!important}
 }
 
+
+/* ===== V9 — MARKED-AREA COMPACT HERO ===== */
+.hero{
+  min-height:0!important;
+  height:auto!important;
+  padding:22px 28px 24px!important;
+  display:flex!important;
+  align-items:center!important;
+  border-radius:0 0 24px 24px!important;
+}
+.am-premium-content{width:100%!important;max-width:920px!important}
+.am-kicker{
+  font-size:9px!important;
+  padding:5px 10px!important;
+  letter-spacing:1px!important;
+  margin-bottom:5px!important;
+}
+.am-premium-content h1{
+  font-size:clamp(24px,4vw,42px)!important;
+  line-height:1.12!important;
+  margin:7px 0 10px!important;
+  letter-spacing:-.5px!important;
+}
+.am-lead{
+  font-size:clamp(12px,1.6vw,16px)!important;
+  line-height:1.45!important;
+  margin:0 0 10px!important;
+  max-width:900px!important;
+}
+.am-notice{
+  max-width:900px!important;
+  padding:9px 12px!important;
+  margin:7px 0 0!important;
+  border-radius:12px!important;
+  gap:9px!important;
+}
+.am-notice-icon{font-size:17px!important}
+.am-notice b{font-size:13px!important}
+.am-notice p{font-size:11px!important;line-height:1.35!important;margin:2px 0 0!important}
+.am-about-pro{
+  font-size:15px;
+  line-height:1.75;
+}
+.am-about-pro > p{margin:0 0 12px}
+.am-about-pro > p:first-child{font-size:18px;color:#1557c0;letter-spacing:.5px}
+.am-about-note{
+  padding:13px 15px;border-left:4px solid #ffc107;
+  border-radius:12px;background:#fff8dc;
+}
+@media(max-width:700px){
+  .hero{padding:15px 16px 17px!important}
+  .am-kicker{font-size:7px!important;padding:4px 8px!important;letter-spacing:.65px!important}
+  .am-premium-content h1{
+    font-size:24px!important;
+    line-height:1.13!important;
+    margin:6px 0 7px!important;
+  }
+  .am-lead{
+    font-size:12px!important;
+    line-height:1.4!important;
+    margin-bottom:7px!important;
+  }
+  .am-notice{padding:8px 9px!important;margin:5px 0 0!important}
+  .am-notice-icon{font-size:15px!important}
+  .am-notice b{font-size:11.5px!important}
+  .am-notice p{font-size:10px!important;line-height:1.28!important}
+  .am-about-pro{font-size:14px;line-height:1.65}
+}
+
 </style>
 </head>
 <body class="light">
@@ -535,59 +604,54 @@ header, .site-header, .topbar, .navbar {
 </div>
 </div></header>
 
+
 <section class="hero">
-<div class="am-premium-content">
-  <div class="am-kicker">ANIL MANDAL PREMIUM RICE STORE</div>
-
-  <h1>আপনার প্রতিদিনের রান্নার জন্য <span>ভালো মানের চালের সেরা পছন্দ।</span> 🍚</h1>
-
-  <p class="am-lead">
-    আমাদের <strong>চালের গুদানে</strong> বিভিন্ন ধরনের ভালো মানের চাল পাওয়া যায়।
-    আপনার পছন্দ ও প্রয়োজন অনুযায়ী চাল <strong>নিজের চোখে দেখে, যাচাই করে এবং পছন্দ করে</strong>
-    কিনে নিতে পারবেন।
-  </p>
-
-  <div class="am-notice">
-    <div class="am-notice-icon">📌</div>
-    <div>
-      <b>বর্তমানে অনলাইন/WhatsApp অর্ডার পরিষেবা চালু নেই।</b>
-      <p>তবে WhatsApp-এর মাধ্যমে আমাদের সঙ্গে যোগাযোগ করে
-      <strong>চালের ধরন, মূল্য, স্টক ও অন্যান্য বিস্তারিত তথ্য</strong> জানতে পারবেন।</p>
+  <div class="am-premium-content">
+    <div class="am-kicker">ANIL MANDAL PREMIUM RICE STORE</div>
+    <h1>আপনার প্রতিদিনের রান্নার জন্য <span>ভালো মানের চালের সেরা পছন্দ।</span></h1>
+    <p class="am-lead">
+      আমাদের <strong>চালের গুদানে</strong> বিভিন্ন ধরনের ভালো মানের চাল পাওয়া যায়।
+      আপনার পছন্দ ও প্রয়োজন অনুযায়ী চাল <strong>দেখে, যাচাই করে ও পছন্দ করে</strong> কিনে নিতে পারবেন।
+    </p>
+    <div class="am-notice">
+      <div class="am-notice-icon">📌</div>
+      <div>
+        <b>বর্তমানে অনলাইন/WhatsApp অর্ডার পরিষেবা চালু নেই।</b>
+        <p>WhatsApp-এর মাধ্যমে <strong>চালের ধরন, মূল্য, স্টক ও অন্যান্য তথ্য</strong> জানতে পারবেন।</p>
+      </div>
     </div>
   </div>
-
-  <div class="am-store-note">
-    <span>🛒</span>
-    <p>চাল কিনতে হলে আপনাকে <strong>সরাসরি আমাদের স্টোরে</strong> এসে চাল দেখে,
-    যাচাই করে এবং পছন্দ করে কিনে নিয়ে যেতে হবে।</p>
-  </div>
-
-  <div class="am-steps">
-    <span><i>01</i> চাল দেখুন</span>
-    <b>→</b>
-    <span><i>02</i> পছন্দ করুন</span>
-    <b>→</b>
-    <span><i>03</i> যাচাই করুন</span>
-    <b>→</b>
-    <span><i>04</i> কিনে নিয়ে যান</span>
-  </div>
-
-  <p class="am-footer-copy">
-    আপনার প্রয়োজন অনুযায়ী বিভিন্ন ধরনের চালের জন্য <strong>সরাসরি আমাদের স্টোরে আসুন।</strong>
-  </p>
-
-  <div class="am-brand-line">
-    <strong>ANIL MANDAL PREMIUM RICE STORE</strong>
-    <span>ভালো চাল, ভালো রান্নার প্রথম পছন্দ। 🍚</span>
-  </div>
-</div>
 </section>
+
 
 <div class="toolbar" id="products"><div class="sectionTitle"><span class="sectionIcon">🍚</span><div><h2>চালের পণ্য</h2><small id="count">সব পণ্য</small></div></div><span class="sectionHint">আপনার পছন্দের চাল বেছে নিন</span></div>
 <div class="filters" id="categoryFilters"></div>
 <section class="products" id="grid"></section>
 
-<section class="about"><h2>আমাদের সম্পর্কে</h2><p id="about">Anil Mandal Rice Store-এ দৈনন্দিন রান্না ও বিশেষ অনুষ্ঠানের জন্য মানসম্মত চালের বিভিন্ন সংগ্রহ পাওয়া যায়।</p></section>
+
+<section class="about">
+  <h2>আমাদের সম্পর্কে</h2>
+  <div class="am-about-pro">
+    <p><strong>ANIL MANDAL PREMIUM RICE STORE</strong></p>
+    <p>আপনার প্রতিদিনের রান্নার জন্য ভালো মানের চালের সেরা পছন্দ। 🍚</p>
+    <p>আমাদের চালের গুদানে বিভিন্ন ধরনের ভালো মানের চাল পাওয়া যায়। আপনার পছন্দ ও প্রয়োজন অনুযায়ী চাল নিজের চোখে দেখে, যাচাই করে এবং পছন্দ করে কিনে নিতে পারবেন।</p>
+    <p class="am-about-note">📌 <strong>বর্তমানে অনলাইন/WhatsApp অর্ডার পরিষেবা চালু নেই।</strong><br>
+    তবে WhatsApp-এর মাধ্যমে আমাদের সঙ্গে যোগাযোগ করে চালের ধরন, মূল্য, স্টক ও অন্যান্য বিস্তারিত তথ্য জানতে পারবেন।</p>
+    <p>🛒 চাল কিনতে হলে আপনাকে <strong>সরাসরি আমাদের স্টোরে</strong> এসে চাল দেখে, যাচাই করে এবং পছন্দ করে কিনে নিয়ে যেতে হবে।</p>
+    <div class="am-steps">
+      <span><i>01</i> চাল দেখুন</span><b>→</b>
+      <span><i>02</i> পছন্দ করুন</span><b>→</b>
+      <span><i>03</i> যাচাই করুন</span><b>→</b>
+      <span><i>04</i> কিনে নিয়ে যান</span>
+    </div>
+    <p>আপনার প্রয়োজন অনুযায়ী বিভিন্ন ধরনের চালের জন্য <strong>সরাসরি আমাদের স্টোরে আসুন।</strong></p>
+    <div class="am-brand-line">
+      <strong>ANIL MANDAL PREMIUM RICE STORE</strong>
+      <span>ভালো চাল, ভালো রান্নার প্রথম পছন্দ। 🍚</span>
+    </div>
+  </div>
+</section>
+
 <section class="contact"><div class="contactBox"><b>📞 ফোন</b><span id="phone">নম্বর যোগ করুন</span></div><div class="contactBox"><b>💬 WhatsApp</b><span id="wa">WhatsApp নম্বর যোগ করুন</span></div><div class="contactBox"><b>📍 দোকানের ঠিকানা</b><span id="address">ঠিকানা যোগ করুন</span></div></section>
 
 <footer><b>Anil Mandal Rice Store</b><div>© <span id="year"></span> • সকল অধিকার সংরক্ষিত</div>
