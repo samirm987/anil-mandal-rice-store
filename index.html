@@ -356,6 +356,120 @@ header, .header, .siteHeader{
  .brandStatement b{font-size:12px!important}
 }
 
+
+/* ===== ANIL MANDAL — PROFESSIONAL HERO V7 ===== */
+.hero{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:560px!important;
+  padding:clamp(30px,5vw,70px)!important;
+  display:flex!important;
+  align-items:center!important;
+  border-radius:30px!important;
+  background:
+    radial-gradient(circle at 90% 18%,rgba(255,218,91,.22),transparent 16%),
+    radial-gradient(circle at 78% 90%,rgba(91,203,255,.30),transparent 30%),
+    linear-gradient(135deg,#063fb7 0%,#086be8 48%,#28a7f5 100%)!important;
+  box-shadow:0 25px 65px rgba(5,62,145,.28)!important;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(120deg,transparent 35%,rgba(255,255,255,.07) 50%,transparent 65%),
+    radial-gradient(circle at 12% 80%,rgba(255,255,255,.10),transparent 20%);
+}
+.hero::after{
+  content:"";position:absolute;width:520px;height:520px;right:-250px;bottom:-300px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 0 0 55px rgba(255,255,255,.035),0 0 0 120px rgba(255,255,255,.025);
+}
+.am-premium-content{
+  position:relative;z-index:4;width:min(1050px,100%);
+  color:#fff;
+}
+.am-kicker{
+  display:inline-flex;align-items:center;
+  padding:9px 15px;border-radius:999px;
+  color:#ffe38a;background:rgba(4,30,80,.24);
+  border:1px solid rgba(255,226,138,.48);
+  font-size:12px;font-weight:900;letter-spacing:2px;
+  box-shadow:inset 0 1px rgba(255,255,255,.13);
+}
+.am-premium-content h1{
+  margin:19px 0 20px;max-width:900px;
+  font-size:clamp(32px,5vw,60px);line-height:1.13;
+  letter-spacing:-1.5px;font-weight:950;color:#fff;
+  text-shadow:0 8px 25px rgba(0,20,70,.20);
+}
+.am-premium-content h1 span{
+  color:#ffe28a;
+}
+.am-lead{
+  max-width:920px;margin:0 0 18px;
+  font-size:clamp(15px,2vw,19px);line-height:1.75;
+  color:rgba(255,255,255,.94);
+}
+.am-premium-content strong{color:#ffe28a;font-weight:950}
+.am-notice{
+  max-width:900px;display:flex;gap:14px;align-items:flex-start;
+  padding:17px 19px;margin:20px 0;
+  border:1px solid rgba(255,226,138,.35);
+  border-left:5px solid #ffd24d;
+  border-radius:17px;background:rgba(0,29,82,.25);
+  box-shadow:0 14px 35px rgba(0,20,70,.10),inset 0 1px rgba(255,255,255,.10);
+  backdrop-filter:blur(12px);
+}
+.am-notice-icon{font-size:22px;line-height:1}
+.am-notice b{font-size:16px;color:#fff}
+.am-notice p{margin:5px 0 0;color:rgba(255,255,255,.84);line-height:1.6}
+.am-store-note{
+  max-width:900px;display:flex;gap:12px;align-items:flex-start;
+  margin:14px 0;color:rgba(255,255,255,.92);
+  font-size:16px;line-height:1.65;
+}
+.am-store-note span{font-size:22px}.am-store-note p{margin:0}
+.am-steps{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  max-width:900px;margin:22px 0;padding:12px;
+  border-radius:17px;background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.20);
+  backdrop-filter:blur(12px);
+}
+.am-steps span{
+  padding:9px 11px;border-radius:11px;
+  background:rgba(255,255,255,.08);
+  font-weight:850;color:#fff;
+}
+.am-steps i{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;margin-right:6px;border-radius:50%;
+  background:#ffd24d;color:#092d72;font-size:10px;font-style:normal;font-weight:950;
+}
+.am-steps b{color:#ffd24d;font-size:18px}
+.am-footer-copy{max-width:850px;margin:12px 0;color:rgba(255,255,255,.88);font-size:15px}
+.am-brand-line{
+  display:flex;flex-direction:column;gap:5px;
+  margin-top:20px;padding-top:17px;
+  border-top:1px solid rgba(255,255,255,.20);
+}
+.am-brand-line strong{color:#fff!important;font-size:14px;letter-spacing:1.6px}
+.am-brand-line span{color:#ffe28a;font-weight:800;font-size:14px}
+.hero-logo,.hero-card,.heroVisual,.brand-card,.rice-hero-card{display:none!important}
+@media(max-width:700px){
+  .hero{min-height:0!important;padding:28px 18px 32px!important;border-radius:22px!important}
+  .am-kicker{font-size:9px;letter-spacing:1.1px;padding:8px 11px}
+  .am-premium-content h1{font-size:31px;line-height:1.17;margin:15px 0}
+  .am-lead{font-size:14px;line-height:1.65}
+  .am-notice{padding:13px;margin:15px 0}
+  .am-notice b{font-size:14px}.am-notice p{font-size:13px}
+  .am-store-note{font-size:14px}
+  .am-steps{gap:6px;padding:9px}
+  .am-steps span{font-size:11px;padding:7px 8px}
+  .am-steps b{display:none}
+  .am-brand-line strong{font-size:11px;letter-spacing:1px}
+  .am-brand-line span{font-size:12px}
+}
+
 </style>
 </head>
 <body class="light">
@@ -375,8 +489,51 @@ header, .header, .siteHeader{
 </div></header>
 
 <section class="hero">
+<div class="am-premium-content">
+  <div class="am-kicker">ANIL MANDAL PREMIUM RICE STORE</div>
 
-<div class="heroArt"><div class="riceBag">🍚</div><i class="float f1"></i><i class="float f2"></i><i class="float f3"></i><i class="float f4"></i></div>
+  <h1>আপনার প্রতিদিনের রান্নার জন্য <span>ভালো মানের চালের সেরা পছন্দ।</span> 🍚</h1>
+
+  <p class="am-lead">
+    আমাদের <strong>চালের গুদানে</strong> বিভিন্ন ধরনের ভালো মানের চাল পাওয়া যায়।
+    আপনার পছন্দ ও প্রয়োজন অনুযায়ী চাল <strong>নিজের চোখে দেখে, যাচাই করে এবং পছন্দ করে</strong>
+    কিনে নিতে পারবেন।
+  </p>
+
+  <div class="am-notice">
+    <div class="am-notice-icon">📌</div>
+    <div>
+      <b>বর্তমানে অনলাইন/WhatsApp অর্ডার পরিষেবা চালু নেই।</b>
+      <p>তবে WhatsApp-এর মাধ্যমে আমাদের সঙ্গে যোগাযোগ করে
+      <strong>চালের ধরন, মূল্য, স্টক ও অন্যান্য বিস্তারিত তথ্য</strong> জানতে পারবেন।</p>
+    </div>
+  </div>
+
+  <div class="am-store-note">
+    <span>🛒</span>
+    <p>চাল কিনতে হলে আপনাকে <strong>সরাসরি আমাদের স্টোরে</strong> এসে চাল দেখে,
+    যাচাই করে এবং পছন্দ করে কিনে নিয়ে যেতে হবে।</p>
+  </div>
+
+  <div class="am-steps">
+    <span><i>01</i> চাল দেখুন</span>
+    <b>→</b>
+    <span><i>02</i> পছন্দ করুন</span>
+    <b>→</b>
+    <span><i>03</i> যাচাই করুন</span>
+    <b>→</b>
+    <span><i>04</i> কিনে নিয়ে যান</span>
+  </div>
+
+  <p class="am-footer-copy">
+    আপনার প্রয়োজন অনুযায়ী বিভিন্ন ধরনের চালের জন্য <strong>সরাসরি আমাদের স্টোরে আসুন।</strong>
+  </p>
+
+  <div class="am-brand-line">
+    <strong>ANIL MANDAL PREMIUM RICE STORE</strong>
+    <span>ভালো চাল, ভালো রান্নার প্রথম পছন্দ। 🍚</span>
+  </div>
+</div>
 </section>
 
 <div class="toolbar" id="products"><div class="sectionTitle"><span class="sectionIcon">🍚</span><div><h2>চালের পণ্য</h2><small id="count">সব পণ্য</small></div></div><span class="sectionHint">আপনার পছন্দের চাল বেছে নিন</span></div>
