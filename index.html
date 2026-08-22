@@ -668,6 +668,55 @@ header, .site-header, .topbar, .navbar {
   .am-brand-line strong{font-size:11px!important}
 }
 
+
+/* ===== V11 — PREMIUM BRAND HEADING ===== */
+.am-premium-content h1{
+  position:relative!important;
+  display:inline-block!important;
+  margin:8px 0 13px!important;
+  padding:0 0 10px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:clamp(24px,4.5vw,43px)!important;
+  line-height:1.08!important;
+  font-weight:950!important;
+  letter-spacing:.35px!important;
+  color:transparent!important;
+  background:linear-gradient(100deg,#ffffff 0%,#fff7cf 28%,#ffd34d 52%,#fff2a8 72%,#ffffff 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  text-shadow:0 4px 18px rgba(0,18,70,.30)!important;
+}
+.am-premium-content h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:72px;
+  height:4px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#ffd34d,#fff4b0,transparent);
+  box-shadow:0 0 14px rgba(255,211,77,.55);
+}
+.am-premium-content h1::before{
+  content:"✦";
+  display:inline-block;
+  margin-right:7px;
+  color:#ffd34d;
+  font-size:.55em;
+  vertical-align:middle;
+  filter:drop-shadow(0 2px 6px rgba(255,211,77,.5));
+}
+@media(max-width:700px){
+  .am-premium-content h1{
+    font-size:22px!important;
+    letter-spacing:.15px!important;
+    padding-bottom:8px!important;
+    margin:6px 0 9px!important;
+  }
+  .am-premium-content h1::after{height:3px;width:55px}
+  .am-premium-content h1::before{margin-right:5px}
+}
+
 </style>
 </head>
 <body class="light">
